@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { APP_LOGO, APP_TITLE } from "@/const";
 import { Link, useLocation, useParams } from "wouter";
 import Footer from "@/components/Footer";
+import LiveScore from "@/components/LiveScore";
 import { useEffect, useState } from "react";
 
 // Sample contest data - in real app, this would come from API
@@ -164,11 +165,25 @@ export default function ContestDetails() {
                     </div>
                   </div>
 
-                  {/* Countdown */}
-                  <div className="mt-6 bg-red-50 border-2 border-red-300 rounded-lg p-4 text-center">
-                    <p className="text-sm text-gray-700 mb-1">Starts in</p>
-                    <p className="text-3xl font-bold text-red-600">{contest.startsIn}</p>
-                  </div>
+              {/* Countdown */}
+              <div className="mt-6 bg-red-50 border-2 border-red-300 rounded-lg p-4 text-center">
+                <p className="text-sm text-gray-700 mb-1">Starts in</p>
+                <p className="text-3xl font-bold text-red-600">{contest.startsIn}</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Live Score Card */}
+          <LiveScore 
+            matchId={contestId}
+            team1Name={contest.team1.name}
+            team2Name={contest.team2.name}
+            autoRefresh={true}
+            refreshInterval={30000}
+          />
+
+          <Card className="bg-white shadow-lg">
+            <CardContent className="p-0">
                 </CardContent>
               </Card>
 

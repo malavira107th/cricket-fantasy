@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { APP_LOGO, APP_TITLE } from "@/const";
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
+import LiveLeaderboard from "@/components/LiveLeaderboard";
 
 const SAMPLE_LEADERBOARD = [
   { rank: 1, username: "CricketMaster99", points: 15420, contests: 45, badge: "🏆" },
@@ -104,6 +105,18 @@ export default function Leaderboard() {
       {/* Main Content */}
       <main className="py-12">
         <div className="container max-w-4xl">
+          {/* Live Contest Leaderboard */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Live Contest Rankings</h2>
+            <LiveLeaderboard 
+              contestId="live"
+              autoRefresh={true}
+              refreshInterval={30000}
+              currentUsername={isLoggedIn ? JSON.parse(localStorage.getItem('userSession') || '{}').username : undefined}
+            />
+          </div>
+
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">All-Time Top Performers</h2>
           {/* Top 3 Podium */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {/* 2nd Place */}

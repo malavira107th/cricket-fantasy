@@ -24,6 +24,12 @@ export interface Match {
     o: number;
     inning: string;
   }>;
+  scoreOld?: Array<{
+    r: number;
+    w: number;
+    o: number;
+    inning: string;
+  }>;
   series_id: string;
   fantasyEnabled: boolean;
   matchStarted?: boolean;
@@ -181,4 +187,105 @@ export function getMatchStatus(match: Match): string {
     return 'Live';
   }
   return getTimeUntilMatch(match.dateTimeGMT);
+}
+
+// Live score interface
+export interface LiveScore {
+  matchId: string;
+  score: Array<{
+    r: number;  // runs
+    w: number;  // wickets
+    o: number;  // overs
+    inning: string;
+  }>;
+  status: string;
+  matchStarted: boolean;
+  matchEnded: boolean;
+}
+
+// Player performance interface
+export interface PlayerPerformance {
+  name: string;
+  runs?: number;
+  balls?: number;
+  fours?: number;
+  sixes?: number;
+  wickets?: number;
+  overs?: number;
+  maidens?: number;
+  catches?: number;
+  stumpings?: number;
+  runOuts?: number;
+  points: number;
+}
+
+// Fetch live match score
+export async function getLiveScore(matchId: string): Promise<LiveScore | null> {
+  try {
+    const response = await fetch(`${BASE_URL}/match_info?apikey=${API_KEY}&id=${matchId}`);
+    const data: ApiResponse<Match> = await response.json();
+    
+    if (data.status === 'success' && data.data) {
+      return {
+        matchId: data.data.id,
+        score: data.data.score || [],
+        status: data.data.status,
+        matchStarted: data.data.matchStarted || false,
+        matchEnded: data.data.matchEnded || false
+      };
+    }
+    return null;
+  } catch (error) {
+    console.error('Error fetching live score:', error);
+    return null;
+  }
+}
+
+// Calculate fantasy points for a player
+export function calculatePlayerPoints(player: PlayerPerformance): number {
+  let points = 0;
+
+  // Batting points
+  if (player.runs !== undefined) {
+    points += player.runs; // 1 point per run
+    
+    // Boundary bonus
+    if (player.fours) points += player.fours; // +1 for each four
+    if (player.sixes) points += player.sixes * 2; // +2 for each six
+    
+    // Milestone bonus
+    if (player.runs >= 50 && player.runs < 100) points += 8; // Half-century
+    if (player.runs >= 100) points += 16; // Century
+    
+    // Duck penalty
+    if (player.runs === 0 && player.balls && player.balls > 0) points -= 2;
+  }
+
+  // Bowling points
+  if (player.wickets !== undefined) {
+    points += player.wickets * 25; // 25 points per wicket
+    
+    // Milestone bonus
+    if (player.wickets >= 3 && player.wickets < 5) points += 4; // 3 wickets
+    if (player.wickets >= 5) points += 8; // 5 wickets
+  }
+  
+  if (player.maidens) points += player.maidens * 12; // 12 points per maiden
+
+  // Fielding points
+  if (player.catches) points += player.catches * 8; // 8 points per catch
+  if (player.stumpings) points += player.stumpings * 12; // 12 points per stumping
+  if (player.runOuts) points += player.runOuts * 12; // 12 points per run out
+
+  return points;
+}
+
+// Check if match is live
+export function isMatchLive(match: Match): boolean {
+  return match.matchStarted === true && match.matchEnded === false;
+}
+
+// Format score display
+export function formatScore(score: { r: number; w: number; o: number }): string {
+  return `${score.r}/${score.w} (${score.o})`;
 }
