@@ -6,6 +6,84 @@ import { Link } from "wouter";
 import { useState, useEffect } from "react";
 import { getCurrentMatches } from "@/lib/cricketApi";
 
+// Demo matches fallback data
+function getDemoMatches() {
+  return [
+    {
+      id: 'demo-1',
+      name: 'India vs Australia - 3rd T20',
+      matchType: 'T20',
+      status: 'Starts in 2h 30m',
+      venue: 'M. Chinnaswamy Stadium, Bengaluru',
+      date: new Date(Date.now() + 2.5 * 60 * 60 * 1000).toISOString(),
+      dateTimeGMT: new Date(Date.now() + 2.5 * 60 * 60 * 1000).toISOString(),
+      teams: ['India', 'Australia'],
+      teamInfo: [
+        { name: 'India', shortname: 'IND', img: '' },
+        { name: 'Australia', shortname: 'AUS', img: '' }
+      ],
+      series_id: 'demo-series-1',
+      fantasyEnabled: true,
+      matchStarted: false,
+      matchEnded: false
+    },
+    {
+      id: 'demo-2',
+      name: 'England vs Pakistan - 2nd ODI',
+      matchType: 'ODI',
+      status: 'Starts in 5h 15m',
+      venue: 'Lord\'s, London',
+      date: new Date(Date.now() + 5.25 * 60 * 60 * 1000).toISOString(),
+      dateTimeGMT: new Date(Date.now() + 5.25 * 60 * 60 * 1000).toISOString(),
+      teams: ['England', 'Pakistan'],
+      teamInfo: [
+        { name: 'England', shortname: 'ENG', img: '' },
+        { name: 'Pakistan', shortname: 'PAK', img: '' }
+      ],
+      series_id: 'demo-series-2',
+      fantasyEnabled: true,
+      matchStarted: false,
+      matchEnded: false
+    },
+    {
+      id: 'demo-3',
+      name: 'Mumbai vs Delhi - IPL 2024',
+      matchType: 'T20',
+      status: 'Starts in 8h 45m',
+      venue: 'Wankhede Stadium, Mumbai',
+      date: new Date(Date.now() + 8.75 * 60 * 60 * 1000).toISOString(),
+      dateTimeGMT: new Date(Date.now() + 8.75 * 60 * 60 * 1000).toISOString(),
+      teams: ['Mumbai Indians', 'Delhi Capitals'],
+      teamInfo: [
+        { name: 'Mumbai Indians', shortname: 'MI', img: '' },
+        { name: 'Delhi Capitals', shortname: 'DC', img: '' }
+      ],
+      series_id: 'demo-series-3',
+      fantasyEnabled: true,
+      matchStarted: false,
+      matchEnded: false
+    },
+    {
+      id: 'demo-4',
+      name: 'South Africa vs New Zealand - Test Match',
+      matchType: 'Test',
+      status: 'Starts in 12h',
+      venue: 'Newlands, Cape Town',
+      date: new Date(Date.now() + 12 * 60 * 60 * 1000).toISOString(),
+      dateTimeGMT: new Date(Date.now() + 12 * 60 * 60 * 1000).toISOString(),
+      teams: ['South Africa', 'New Zealand'],
+      teamInfo: [
+        { name: 'South Africa', shortname: 'RSA', img: '' },
+        { name: 'New Zealand', shortname: 'NZ', img: '' }
+      ],
+      series_id: 'demo-series-4',
+      fantasyEnabled: true,
+      matchStarted: false,
+      matchEnded: false
+    }
+  ];
+}
+
 export default function Home() {
   // The userAuth hooks provides authentication state
   // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
@@ -26,9 +104,16 @@ export default function Home() {
       try {
         const matches = await getCurrentMatches();
         // Get first 4 matches for featured section
-        setFeaturedMatches(matches.slice(0, 4));
+        if (matches && matches.length > 0) {
+          setFeaturedMatches(matches.slice(0, 4));
+        } else {
+          // Fallback to demo data if API returns no matches
+          setFeaturedMatches(getDemoMatches());
+        }
       } catch (error) {
         console.error('Error fetching matches:', error);
+        // Use demo data on error
+        setFeaturedMatches(getDemoMatches());
       } finally {
         setLoading(false);
       }
