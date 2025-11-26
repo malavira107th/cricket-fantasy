@@ -311,6 +311,223 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Quick Stats */}
+      <section className="py-16 bg-gradient-to-br from-primary to-blue-700 text-white">
+        <div className="container">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-5xl font-bold mb-2">5,234</div>
+              <div className="text-lg text-white/90">Active Players</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold mb-2">12</div>
+              <div className="text-lg text-white/90">Live Contests</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold mb-2">1,456</div>
+              <div className="text-lg text-white/90">Completed Contests</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold mb-2 text-secondary">100%</div>
+              <div className="text-lg text-white/90">FREE</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <h2 className="text-4xl font-bold text-primary text-center mb-12">How to Play - It's Simple!</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Step 1 */}
+            <div className="text-center">
+              <div className="w-20 h-20 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-6">
+                <svg className="w-10 h-10 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">1. Select a Contest</h3>
+              <p className="text-gray-600">Browse upcoming cricket matches and choose a contest to join. All contests are 100% free.</p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="text-center">
+              <div className="w-20 h-20 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-6">
+                <svg className="w-10 h-10 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">2. Create Your Team</h3>
+              <p className="text-gray-600">Pick 11 players using your cricket knowledge. Choose captain and vice-captain for bonus points.</p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="text-center">
+              <div className="w-20 h-20 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-6">
+                <svg className="w-10 h-10 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">3. Compete & Have Fun</h3>
+              <p className="text-gray-600">Watch the match live, track your points in real-time, and climb the leaderboard!</p>
+            </div>
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/signup">
+              <Button size="lg" className="bg-secondary text-black hover:bg-secondary/90 text-lg px-10 py-6 h-auto font-bold">
+                Start Playing Now
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Top Performers */}
+      <section className="py-16 bg-gray-50">
+        <div className="container">
+          <h2 className="text-4xl font-bold text-primary text-center mb-12">This Week's Top Players</h2>
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden max-w-4xl mx-auto">
+            <table className="w-full">
+              <thead className="bg-primary text-white">
+                <tr>
+                  <th className="px-6 py-4 text-left">Rank</th>
+                  <th className="px-6 py-4 text-left">Player</th>
+                  <th className="px-6 py-4 text-center">Points</th>
+                  <th className="px-6 py-4 text-center">Contests</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                {[
+                  { rank: 1, name: 'CricketMaster', points: 2456, contests: 23, medal: '🥇' },
+                  { rank: 2, name: 'FantasyKing', points: 2398, contests: 21, medal: '🥈' },
+                  { rank: 3, name: 'TeamBuilder', points: 2245, contests: 19, medal: '🥉' },
+                  { rank: 4, name: 'StrategyPro', points: 2134, contests: 18, medal: '' },
+                  { rank: 5, name: 'CaptainCool', points: 2089, contests: 17, medal: '' },
+                ].map((player) => (
+                  <tr key={player.rank} className="hover:bg-gray-50 transition-colors">
+                    <td className="px-6 py-4 font-bold">
+                      <span className="text-2xl mr-2">{player.medal}</span>
+                      #{player.rank}
+                    </td>
+                    <td className="px-6 py-4 font-semibold text-gray-900">{player.name}</td>
+                    <td className="px-6 py-4 text-center font-bold text-secondary">{player.points.toLocaleString()}</td>
+                    <td className="px-6 py-4 text-center text-gray-600">{player.contests}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/leaderboard">
+              <Button variant="link" className="text-primary hover:text-primary/80 font-semibold text-lg">
+                View Full Leaderboard →
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <h2 className="text-4xl font-bold text-primary text-center mb-12">Why Choose Sports IQ Play?</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Feature 1 */}
+            <Card className="bg-white shadow-md hover:shadow-xl transition-all">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">100% Free</h3>
+                <p className="text-gray-600">No entry fees, no hidden costs, ever. Play as much as you want!</p>
+              </CardContent>
+            </Card>
+
+            {/* Feature 2 */}
+            <Card className="bg-white shadow-md hover:shadow-xl transition-all">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">Skill-Based</h3>
+                <p className="text-gray-600">Your cricket knowledge determines success. Strategy matters!</p>
+              </CardContent>
+            </Card>
+
+            {/* Feature 3 */}
+            <Card className="bg-white shadow-md hover:shadow-xl transition-all">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">Legal & Safe</h3>
+                <p className="text-gray-600">Fully compliant with Indian laws. Your data is secure.</p>
+              </CardContent>
+            </Card>
+
+            {/* Feature 4 */}
+            <Card className="bg-white shadow-md hover:shadow-xl transition-all">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">No Prizes - Pure Fun</h3>
+                <p className="text-gray-600">Pure entertainment, no monetary rewards. Bragging rights only!</p>
+              </CardContent>
+            </Card>
+
+            {/* Feature 5 */}
+            <Card className="bg-white shadow-md hover:shadow-xl transition-all">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">Community</h3>
+                <p className="text-gray-600">Join thousands of cricket enthusiasts and compete for fun!</p>
+              </CardContent>
+            </Card>
+
+            {/* Feature 6 */}
+            <Card className="bg-white shadow-md hover:shadow-xl transition-all">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">Easy to Play</h3>
+                <p className="text-gray-600">Simple interface, quick team creation. Start playing in minutes!</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Banner */}
+      <section className="py-16 bg-gradient-to-r from-primary to-blue-700 text-white">
+        <div className="container text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Test Your Cricket IQ?</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">Join thousands of cricket fans playing for fun. No money, no risk, just pure cricket entertainment!</p>
+          <Link href="/signup">
+            <Button size="lg" className="bg-secondary text-black hover:bg-secondary/90 text-lg px-12 py-6 h-auto font-bold">
+              Sign Up Free Now
+            </Button>
+          </Link>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-primary text-white py-12">
         <div className="container">
