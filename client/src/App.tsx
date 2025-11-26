@@ -15,6 +15,8 @@ import FAQ from "./pages/FAQ";
 import About from "./pages/About";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
+import ResponsibleGaming from "./pages/ResponsibleGaming";
+import Contact from "./pages/Contact";
 
 function Router() {
   return (
@@ -30,6 +32,8 @@ function Router() {
       <Route path={"/about"} component={About} />
       <Route path={"/terms"} component={Terms} />
       <Route path={"/privacy"} component={Privacy} />
+      <Route path={"/responsible-gaming"} component={ResponsibleGaming} />
+      <Route path={"/contact"} component={Contact} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
