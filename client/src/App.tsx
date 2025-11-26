@@ -13,6 +13,8 @@ import Contests from "./pages/Contests";
 import Leaderboard from "./pages/Leaderboard";
 import FAQ from "./pages/FAQ";
 import About from "./pages/About";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 
 function Router() {
   return (
@@ -26,6 +28,8 @@ function Router() {
       <Route path={"/leaderboard"} component={Leaderboard} />
       <Route path={"/faq"} component={FAQ} />
       <Route path={"/about"} component={About} />
+      <Route path={"/terms"} component={Terms} />
+      <Route path={"/privacy"} component={Privacy} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
