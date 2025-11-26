@@ -8,9 +8,14 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import HowToPlay from "./pages/HowToPlay";
 import Contests from "./pages/Contests";
+import ContestDetails from "./pages/ContestDetails";
+import CreateTeam from "./pages/CreateTeam";
+import MyTeams from "./pages/MyTeams";
+import MyContests from "./pages/MyContests";
+import Profile from "./pages/Profile";
 import Leaderboard from "./pages/Leaderboard";
+import HowToPlay from "./pages/HowToPlay";
 import FAQ from "./pages/FAQ";
 import About from "./pages/About";
 import Terms from "./pages/Terms";
@@ -22,18 +27,23 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
-      <Route path={"/signup"} component={Signup} />
-      <Route path={"/login"} component={Login} />
-      <Route path={"/dashboard"} component={Dashboard} />
-      <Route path={"/how-to-play"} component={HowToPlay} />
-      <Route path={"/contests"} component={Contests} />
-      <Route path={"/leaderboard"} component={Leaderboard} />
-      <Route path={"/faq"} component={FAQ} />
-      <Route path={"/about"} component={About} />
-      <Route path={"/terms"} component={Terms} />
-      <Route path={"/privacy"} component={Privacy} />
-      <Route path={"/responsible-gaming"} component={ResponsibleGaming} />
-      <Route path={"/contact"} component={Contact} />
+      <Route path="/signup" component={Signup} />
+      <Route path="/login" component={Login} />
+      <Route path="/dashboard" component={Dashboard} />
+      <Route path="/contests" component={Contests} />
+      <Route path="/contest/:id" component={ContestDetails} />
+      <Route path="/create-team/:contestId" component={CreateTeam} />
+      <Route path="/my-teams" component={MyTeams} />
+      <Route path="/my-contests" component={MyContests} />
+      <Route path="/profile" component={Profile} />
+      <Route path="/leaderboard" component={Leaderboard} />
+      <Route path="/how-to-play" component={HowToPlay} />
+      <Route path="/faq" component={FAQ} />
+      <Route path="/about" component={About} />
+      <Route path="/terms" component={Terms} />
+      <Route path="/privacy" component={Privacy} />
+      <Route path="/responsible-gaming" component={ResponsibleGaming} />
+      <Route path="/contact" component={Contact} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

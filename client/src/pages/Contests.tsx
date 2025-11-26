@@ -3,8 +3,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { APP_LOGO, APP_TITLE } from "@/const";
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
+import { getCurrentMatches, getAllMatches, getTeamColor, getTeamCodes, getMatchStatus, type Match } from "@/lib/cricketApi";
 
-const SAMPLE_CONTESTS = [
+const SAMPLE_CONTESTS_BACKUP = [
   {
     id: 1,
     team1: { name: "IND", flag: "🇮🇳", color: "bg-orange-500" },
@@ -63,10 +64,24 @@ const SAMPLE_CONTESTS = [
 
 export default function Contests() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [contests, setContests] = useState<Match[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const userSession = localStorage.getItem('userSession');
     setIsLoggedIn(!!userSession);
+    
+    // Fetch real cricket matches
+    async function fetchMatches() {
+      setLoading(true);
+      const matches = await getCurrentMatches();
+      if (matches.length > 0) {
+        setContests(matches.filter(m => !m.matchEnded).slice(0, 12));
+      }
+      setLoading(false);
+    }
+    
+    fetchMatches();
   }, []);
 
   return (
@@ -173,14 +188,14 @@ export default function Contests() {
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             <Card className="bg-white shadow-md">
               <CardContent className="p-6 text-center">
-                <p className="text-3xl font-bold text-primary">{SAMPLE_CONTESTS.length}</p>
+                <p className="text-3xl font-bold text-primary">{contests.length}</p>
                 <p className="text-gray-600">Live Contests</p>
               </CardContent>
             </Card>
             <Card className="bg-white shadow-md">
               <CardContent className="p-6 text-center">
                 <p className="text-3xl font-bold text-primary">
-                  {SAMPLE_CONTESTS.reduce((sum, c) => sum + c.participants, 0).toLocaleString()}
+                  {contests.length > 0 ? (contests.length * 500).toLocaleString() : '0'}
                 </p>
                 <p className="text-gray-600">Total Participants</p>
               </CardContent>
@@ -195,20 +210,36 @@ export default function Contests() {
 
           {/* Contests Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SAMPLE_CONTESTS.map((contest) => (
+            {loading ? (
+              <div className="col-span-full text-center py-12">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+                <p className="mt-4 text-gray-600">Loading contests...</p>
+              </div>
+            ) : contests.length === 0 ? (
+              <div className="col-span-full text-center py-12">
+                <p className="text-gray-600">No upcoming contests available</p>
+              </div>
+            ) : contests.map((contest) => {
+              const teamCodes = getTeamCodes(contest);
+              const team1Color = getTeamColor(contest.teams[0]);
+              const team2Color = getTeamColor(contest.teams[1]);
+              const matchStatus = getMatchStatus(contest);
+              const participants = Math.floor(Math.random() * 2000) + 100; // Random for demo
+              
+              return (
               <Card key={contest.id} className="bg-white shadow-md hover:shadow-xl transition-all border border-gray-200">
                 <CardContent className="p-6">
                   {/* Teams */}
                   <div className="flex items-center justify-center gap-6 mb-4">
                     <div className="text-center">
-                      <div className={`w-16 h-16 rounded-full ${contest.team1.color} flex items-center justify-center mb-2 mx-auto`}>
-                        <span className="text-white font-bold text-lg">{contest.team1.name}</span>
+                      <div className={`w-16 h-16 rounded-full ${team1Color} flex items-center justify-center mb-2 mx-auto`}>
+                        <span className="text-white font-bold text-lg">{teamCodes.team1}</span>
                       </div>
                     </div>
                     <span className="text-2xl font-bold text-gray-400">vs</span>
                     <div className="text-center">
-                      <div className={`w-16 h-16 rounded-full ${contest.team2.color} flex items-center justify-center mb-2 mx-auto`}>
-                        <span className="text-white font-bold text-lg">{contest.team2.name}</span>
+                      <div className={`w-16 h-16 rounded-full ${team2Color} flex items-center justify-center mb-2 mx-auto`}>
+                        <span className="text-white font-bold text-lg">{teamCodes.team2}</span>
                       </div>
                     </div>
                   </div>
@@ -216,16 +247,20 @@ export default function Contests() {
                   {/* Match Details */}
                   <div className="text-center mb-4">
                     <p className="text-sm text-gray-600 font-medium">
-                      Starts in: <span className="text-red-600 font-bold">{contest.startTime}</span>
+                      {contest.matchStarted ? (
+                        <span className="text-green-600 font-bold">Live Now</span>
+                      ) : (
+                        <span>Starts in: <span className="text-red-600 font-bold">{matchStatus}</span></span>
+                      )}
                     </p>
-                    <p className="text-xs text-gray-500">{contest.matchType} | {contest.venue}</p>
+                    <p className="text-xs text-gray-500">{contest.matchType.toUpperCase()} | {contest.venue.split(',')[0]}</p>
                   </div>
 
                   {/* Participants */}
                   <div className="bg-gray-50 rounded-lg p-3 mb-4">
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-gray-600">Participants:</span>
-                      <span className="font-bold text-primary">{contest.participants.toLocaleString()}</span>
+                      <span className="font-bold text-primary">{participants.toLocaleString()}</span>
                     </div>
                   </div>
 
@@ -245,11 +280,12 @@ export default function Contests() {
                   )}
                 </CardContent>
               </Card>
-            ))}
+              );
+            })}
           </div>
 
-          {/* Empty State (if no contests) - Hidden for now since we have sample data */}
-          {SAMPLE_CONTESTS.length === 0 && (
+          {/* Empty State - shown when no contests available */}
+          {!loading && contests.length === 0 && (
             <div className="text-center py-16">
               <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
