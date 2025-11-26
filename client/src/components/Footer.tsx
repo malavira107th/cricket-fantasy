@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { APP_LOGO, APP_TITLE, COMPANY_NAME, COMPANY_ADDRESS, TAGLINE } from "@/const";
 
 export default function Footer() {
   return (
@@ -35,12 +36,13 @@ export default function Footer() {
 
           <div>
             <h4 className="font-bold text-lg mb-4">Company</h4>
+            <div className="flex flex-col items-start gap-3 mb-4">
+              <img src={APP_LOGO} alt={APP_TITLE} className="h-16 w-auto" />
+            </div>
             <div className="text-sm text-white/80 space-y-2">
-              <p className="font-semibold text-white">Sports IQ Play Private Limited</p>
-              <p>CIN: U74999DL2023PTC123456</p>
-              <p>PAN: AAFCS1234E</p>
-              <p className="mt-3">New Delhi, Delhi, India</p>
-              <p>Est. January 2025</p>
+              <p className="font-semibold text-white">{COMPANY_NAME}</p>
+              <p className="italic text-secondary">{TAGLINE}</p>
+              <p className="mt-3">{COMPANY_ADDRESS}</p>
             </div>
           </div>
         </div>

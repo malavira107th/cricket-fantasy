@@ -34,7 +34,7 @@ export default function MyContests() {
         <div className="container">
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="flex items-center gap-3">
-              <img src={APP_LOGO} alt={APP_TITLE} className="h-14 w-auto" />
+              <img src={APP_LOGO} alt={APP_TITLE} className="h-12 w-auto" />
               <div className="text-xl font-bold hidden sm:block">
                 <span className="text-white">Sports IQ </span>
                 <span className="text-secondary">Play</span>

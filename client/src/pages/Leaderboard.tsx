@@ -33,7 +33,7 @@ export default function Leaderboard() {
         <div className="container">
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="flex items-center gap-3">
-              <img src={APP_LOGO} alt={APP_TITLE} className="h-14 w-auto" />
+              <img src={APP_LOGO} alt={APP_TITLE} className="h-12 w-auto" />
               <div className="text-xl font-bold hidden sm:block">
                 <span className="text-white">Sports IQ </span>
                 <span className="text-secondary">Play</span>
@@ -118,13 +118,13 @@ export default function Leaderboard() {
 
           <h2 className="text-2xl font-bold text-gray-900 mb-6">All-Time Top Performers</h2>
           {/* Top 3 Podium */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto">
             {/* 2nd Place */}
             <div className="md:order-1 order-2">
               <Card className="bg-gradient-to-br from-gray-300 to-gray-400 text-white shadow-xl mt-8">
                 <CardContent className="p-6 text-center">
                   <div className="text-5xl mb-2">🥈</div>
-                  <h3 className="text-2xl font-bold mb-1">{SAMPLE_LEADERBOARD[1].username}</h3>
+                  <h3 className="text-xl font-bold mb-1 px-2">{SAMPLE_LEADERBOARD[1].username}</h3>
                   <p className="text-3xl font-bold mb-2">{SAMPLE_LEADERBOARD[1].points.toLocaleString()}</p>
                   <p className="text-sm opacity-90">{SAMPLE_LEADERBOARD[1].contests} Contests</p>
                 </CardContent>
@@ -136,7 +136,7 @@ export default function Leaderboard() {
               <Card className="bg-gradient-to-br from-yellow-400 to-yellow-600 text-white shadow-2xl">
                 <CardContent className="p-8 text-center">
                   <div className="text-6xl mb-3">🏆</div>
-                  <h3 className="text-3xl font-bold mb-2">{SAMPLE_LEADERBOARD[0].username}</h3>
+                  <h3 className="text-2xl font-bold mb-2 px-2">{SAMPLE_LEADERBOARD[0].username}</h3>
                   <p className="text-4xl font-bold mb-3">{SAMPLE_LEADERBOARD[0].points.toLocaleString()}</p>
                   <p className="text-sm opacity-90">{SAMPLE_LEADERBOARD[0].contests} Contests</p>
                   <div className="mt-4 bg-white/20 rounded-full px-4 py-1 inline-block">
@@ -151,7 +151,7 @@ export default function Leaderboard() {
               <Card className="bg-gradient-to-br from-orange-400 to-orange-600 text-white shadow-xl mt-8">
                 <CardContent className="p-6 text-center">
                   <div className="text-5xl mb-2">🥉</div>
-                  <h3 className="text-2xl font-bold mb-1">{SAMPLE_LEADERBOARD[2].username}</h3>
+                  <h3 className="text-xl font-bold mb-1 px-2">{SAMPLE_LEADERBOARD[2].username}</h3>
                   <p className="text-3xl font-bold mb-2">{SAMPLE_LEADERBOARD[2].points.toLocaleString()}</p>
                   <p className="text-sm opacity-90">{SAMPLE_LEADERBOARD[2].contests} Contests</p>
                 </CardContent>
