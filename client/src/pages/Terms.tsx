@@ -111,8 +111,22 @@ export default function Terms() {
               </p>
 
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">3.3 No Legal Tender Involved</h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed mb-4">
                 Since no money, prizes, or rewards of any kind are involved, the Platform does not constitute gambling, betting, or wagering under Indian law. It is purely recreational entertainment.
+              </p>
+
+              <h3 className="text-2xl font-semibold text-gray-900 mb-3">3.4 Third-Party Data Sources</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                The Platform integrates with third-party data providers to display real-time cricket match information:
+              </p>
+              <ul className="list-disc list-inside text-gray-700 mb-4 space-y-2">
+                <li><strong>Cricket Data API:</strong> We use Cricket Data API (cricketdata.org) to fetch live match data, including team information, scores, match status, venues, and player details</li>
+                <li><strong>Data Accuracy:</strong> While we strive to provide accurate and timely information, the accuracy, completeness, and timeliness of match data depend entirely on the third-party API provider</li>
+                <li><strong>Service Availability:</strong> The availability of match data and live scores is subject to the third-party API provider's service uptime and may be interrupted or delayed</li>
+                <li><strong>No Warranty:</strong> We do not warrant or guarantee the accuracy, reliability, or availability of any data provided by third-party sources</li>
+              </ul>
+              <p className="text-gray-700 leading-relaxed">
+                <strong>Disclaimer:</strong> Sports IQ Play Private Limited is not responsible for any errors, omissions, delays, or inaccuracies in match data provided by third-party API sources. Users acknowledge that contest results and scores displayed on the Platform are based on data from external sources over which we have no control.
               </p>
             </section>
 
@@ -230,7 +244,22 @@ export default function Terms() {
                 <li>Unauthorized access, use, or alteration of your transmissions or content</li>
               </ul>
 
-              <h3 className="text-2xl font-semibold text-gray-900 mb-3">7.4 No Financial Liability</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-3">7.4 Third-Party Data Disclaimer</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                The Platform relies on third-party API providers (including but not limited to Cricket Data API from cricketdata.org) for cricket match data, scores, and related information. We explicitly disclaim all liability for:
+              </p>
+              <ul className="list-disc list-inside text-gray-700 mb-4 space-y-2">
+                <li>Accuracy, completeness, or timeliness of match data provided by third-party sources</li>
+                <li>Delays, interruptions, or unavailability of third-party API services</li>
+                <li>Errors or inaccuracies in scores, match results, player statistics, or contest outcomes resulting from third-party data</li>
+                <li>Any decisions you make based on data provided by third-party sources</li>
+                <li>Changes to third-party API terms, pricing, or availability that may affect Platform functionality</li>
+              </ul>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                You acknowledge and agree that we have no control over third-party data sources and cannot be held responsible for any issues arising from their services.
+              </p>
+
+              <h3 className="text-2xl font-semibold text-gray-900 mb-3">7.5 No Financial Liability</h3>
               <p className="text-gray-700 leading-relaxed">
                 Since the Platform is completely free with no prizes or monetary rewards, there is no financial liability on our part for any contest outcomes, scoring disputes, or technical issues.
               </p>

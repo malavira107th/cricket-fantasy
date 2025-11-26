@@ -101,8 +101,22 @@ export default function Privacy() {
               </ul>
 
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">2.3 Contest and Gameplay Data</h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed mb-4">
                 We collect information about your gameplay, including teams created, contests joined, scores achieved, and leaderboard rankings. This data is used solely to provide the gaming experience and display your performance.
+              </p>
+
+              <h3 className="text-2xl font-semibold text-gray-900 mb-3">2.4 Third-Party API Data</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                To provide real-time cricket match information, we integrate with third-party data providers:
+              </p>
+              <ul className="list-disc list-inside text-gray-700 mb-4 space-y-2">
+                <li><strong>Cricket Data API (cricketdata.org):</strong> We fetch live cricket match data including team names, scores, match status, venues, and player information</li>
+                <li><strong>Data Usage:</strong> This data is displayed on our platform to show current and upcoming matches, contest information, and live scores</li>
+                <li><strong>No Personal Data Shared:</strong> We do not share any of your personal information with these third-party API providers</li>
+                <li><strong>API Provider's Privacy:</strong> The third-party API provider may have their own privacy policies governing the cricket match data they provide</li>
+              </ul>
+              <p className="text-gray-700 leading-relaxed">
+                <strong>Important:</strong> Match data accuracy, availability, and timeliness depend on the third-party API provider. We are not responsible for any delays, inaccuracies, or unavailability of match data from external sources.
               </p>
             </section>
 
