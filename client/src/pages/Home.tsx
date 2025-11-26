@@ -3,15 +3,33 @@ import { Card, CardContent } from "@/components/ui/card";
 import { APP_LOGO, APP_TITLE } from "@/const";
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
+import { getCurrentMatches } from "@/lib/cricketApi";
 
 export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [featuredMatches, setFeaturedMatches] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const userSession = localStorage.getItem('userSession');
     if (userSession) {
       setIsLoggedIn(true);
     }
+
+    // Fetch real cricket matches
+    const fetchMatches = async () => {
+      try {
+        const matches = await getCurrentMatches();
+        // Get first 4 matches for featured section
+        setFeaturedMatches(matches.slice(0, 4));
+      } catch (error) {
+        console.error('Error fetching matches:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMatches();
   }, []);
 
   return (
@@ -188,125 +206,86 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Contest Card 1 */}
-            <Card className="bg-white shadow-md hover:shadow-xl transition-all border border-gray-200">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-center gap-6 mb-4">
-                  <div className="text-center">
-                    <div className="w-14 h-14 rounded-full bg-orange-500 flex items-center justify-center mb-2 mx-auto">
-                      <span className="text-white font-bold text-sm">IND</span>
+            {loading ? (
+              // Loading skeleton
+              Array.from({ length: 4 }).map((_, i) => (
+                <Card key={i} className="bg-white shadow-md border border-gray-200">
+                  <CardContent className="p-6">
+                    <div className="animate-pulse">
+                      <div className="flex items-center justify-center gap-6 mb-4">
+                        <div className="w-14 h-14 rounded-full bg-gray-200"></div>
+                        <span className="text-xl font-bold text-gray-300">vs</span>
+                        <div className="w-14 h-14 rounded-full bg-gray-200"></div>
+                      </div>
+                      <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                      <div className="h-3 bg-gray-200 rounded mb-3"></div>
+                      <div className="h-10 bg-gray-200 rounded"></div>
                     </div>
-                  </div>
-                  <span className="text-xl font-bold text-gray-400">vs</span>
-                  <div className="text-center">
-                    <div className="w-14 h-14 rounded-full bg-yellow-500 flex items-center justify-center mb-2 mx-auto">
-                      <span className="text-white font-bold text-sm">AUS</span>
-                    </div>
-                  </div>
-                </div>
+                  </CardContent>
+                </Card>
+              ))
+            ) : featuredMatches.length > 0 ? (
+              // Real match data
+              featuredMatches.map((match, index) => {
+                const team1 = match.teams?.[0] || match.teamInfo?.[0] || {};
+                const team2 = match.teams?.[1] || match.teamInfo?.[1] || {};
+                const team1Code = team1.shortname || team1.name?.substring(0, 3).toUpperCase() || 'TBD';
+                const team2Code = team2.shortname || team2.name?.substring(0, 3).toUpperCase() || 'TBD';
+                const team1Img = team1.img || '';
+                const team2Img = team2.img || '';
+                const matchType = match.matchType || match.type || 'Match';
+                const venue = match.venue || 'TBD';
+                const status = match.status || 'Upcoming';
 
-                <div className="text-center mb-3">
-                  <p className="text-sm text-gray-600 font-medium">Starts in: <span className="text-red-600 font-bold">2h 30m</span></p>
-                  <p className="text-xs text-gray-500">2nd T20I | Eden Gardens</p>
-                </div>
+                return (
+                  <Card key={match.id || index} className="bg-white shadow-md hover:shadow-xl transition-all border border-gray-200">
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-center gap-6 mb-4">
+                        <div className="text-center">
+                          {team1Img ? (
+                            <img src={team1Img} alt={team1Code} className="w-14 h-14 rounded-full object-cover mb-2 mx-auto" />
+                          ) : (
+                            <div className="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center mb-2 mx-auto">
+                              <span className="text-white font-bold text-xs">{team1Code}</span>
+                            </div>
+                          )}
+                          <p className="text-xs font-medium text-gray-700">{team1.name || team1Code}</p>
+                        </div>
+                        <span className="text-xl font-bold text-gray-400">vs</span>
+                        <div className="text-center">
+                          {team2Img ? (
+                            <img src={team2Img} alt={team2Code} className="w-14 h-14 rounded-full object-cover mb-2 mx-auto" />
+                          ) : (
+                            <div className="w-14 h-14 rounded-full bg-red-500 flex items-center justify-center mb-2 mx-auto">
+                              <span className="text-white font-bold text-xs">{team2Code}</span>
+                            </div>
+                          )}
+                          <p className="text-xs font-medium text-gray-700">{team2.name || team2Code}</p>
+                        </div>
+                      </div>
 
-                <Link href="/contest/1">
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-white font-semibold">
-                    Join Now
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
+                      <div className="text-center mb-3">
+                        <p className="text-sm text-gray-600 font-medium">
+                          Status: <span className={status === 'Live' ? 'text-red-600 font-bold' : 'text-green-600 font-bold'}>{status}</span>
+                        </p>
+                        <p className="text-xs text-gray-500">{matchType} | {venue}</p>
+                      </div>
 
-            {/* Contest Card 2 */}
-            <Card className="bg-white shadow-md hover:shadow-xl transition-all border border-gray-200">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-center gap-6 mb-4">
-                  <div className="text-center">
-                    <div className="w-14 h-14 rounded-full bg-red-600 flex items-center justify-center mb-2 mx-auto">
-                      <span className="text-white font-bold text-sm">ENG</span>
-                    </div>
-                  </div>
-                  <span className="text-xl font-bold text-gray-400">vs</span>
-                  <div className="text-center">
-                    <div className="w-14 h-14 rounded-full bg-green-700 flex items-center justify-center mb-2 mx-auto">
-                      <span className="text-white font-bold text-sm">PAK</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="text-center mb-3">
-                  <p className="text-sm text-gray-600 font-medium">Starts in: <span className="text-red-600 font-bold">2h 30m</span></p>
-                  <p className="text-xs text-gray-500">3th T20I | Eden Gardens</p>
-                </div>
-
-                <Link href="/contest/2">
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-white font-semibold">
-                    Join Now
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
-
-            {/* Contest Card 3 */}
-            <Card className="bg-white shadow-md hover:shadow-xl transition-all border border-gray-200">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-center gap-6 mb-4">
-                  <div className="text-center">
-                    <div className="w-14 h-14 rounded-full bg-green-600 flex items-center justify-center mb-2 mx-auto">
-                      <span className="text-white font-bold text-sm">SA</span>
-                    </div>
-                  </div>
-                  <span className="text-xl font-bold text-gray-400">vs</span>
-                  <div className="text-center">
-                    <div className="w-14 h-14 rounded-full bg-black flex items-center justify-center mb-2 mx-auto">
-                      <span className="text-white font-bold text-sm">NZ</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="text-center mb-3">
-                  <p className="text-sm text-gray-600 font-medium">Starts in: <span className="text-red-600 font-bold">2h 30m</span></p>
-                  <p className="text-xs text-gray-500">4th T20I | Eden Gardens</p>
-                </div>
-
-                <Link href="/contest/3">
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-white font-semibold">
-                    Join Now
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
-
-            {/* Contest Card 4 */}
-            <Card className="bg-white shadow-md hover:shadow-xl transition-all border border-gray-200">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-center gap-6 mb-4">
-                  <div className="text-center">
-                    <div className="w-14 h-14 rounded-full bg-blue-700 flex items-center justify-center mb-2 mx-auto">
-                      <span className="text-white font-bold text-sm">WI</span>
-                    </div>
-                  </div>
-                  <span className="text-xl font-bold text-gray-400">vs</span>
-                  <div className="text-center">
-                    <div className="w-14 h-14 rounded-full bg-yellow-600 flex items-center justify-center mb-2 mx-auto">
-                      <span className="text-white font-bold text-sm">SL</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="text-center mb-3">
-                  <p className="text-sm text-gray-600 font-medium">Starts in: <span className="text-red-600 font-bold">2h 30m</span></p>
-                  <p className="text-xs text-gray-500">2nd T20I | Eden Gardens</p>
-                </div>
-
-                <Link href="/contest/4">
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-white font-semibold">
-                    Join Now
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
+                      <Link href={`/contest/${match.id || index + 1}`}>
+                        <Button className="w-full bg-primary hover:bg-primary/90 text-white font-semibold">
+                          Join Now
+                        </Button>
+                      </Link>
+                    </CardContent>
+                  </Card>
+                );
+              })
+            ) : (
+              // No matches available
+              <div className="col-span-full text-center py-8">
+                <p className="text-gray-500">No matches available at the moment. Check back soon!</p>
+              </div>
+            )}
           </div>
         </div>
       </section>
