@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { APP_LOGO, APP_TITLE } from "@/const";
 import { Link, useLocation } from "wouter";
+import Footer from "@/components/Footer";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -150,6 +151,7 @@ export default function Login() {
           </Card>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

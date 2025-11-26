@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { APP_LOGO, APP_TITLE } from "@/const";
 import { Link, useLocation } from "wouter";
+import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
@@ -170,14 +171,7 @@ export default function Dashboard() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-primary text-white py-6 mt-8">
-        <div className="container">
-          <p className="text-sm text-white/70 text-center">
-            © 2025 Sports IQ Play Private Limited. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

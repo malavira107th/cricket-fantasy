@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { APP_LOGO, APP_TITLE } from "@/const";
 import { Link, useLocation } from "wouter";
+import Footer from "@/components/Footer";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -278,6 +279,7 @@ export default function Signup() {
           </Card>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
