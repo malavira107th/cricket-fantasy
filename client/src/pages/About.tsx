@@ -241,10 +241,9 @@ export default function About() {
                     <h3 className="font-bold text-xl text-primary mb-4">Legal Details</h3>
                     <div className="space-y-3 text-gray-700">
                       <p><strong>Company Name:</strong> Sports IQ Play Private Limited</p>
-                      <p><strong>CIN:</strong> U74999DL2023PTC123456</p>
-                      <p><strong>PAN:</strong> AAFCS1234E</p>
-                      <p><strong>Incorporation Date:</strong> January 2025</p>
                       <p><strong>Type:</strong> Private Limited Company</p>
+                      <p><strong>Tagline:</strong> Test Your Cricket IQ</p>
+                      <p><strong>Address:</strong> E-38/39, Rajiv Chowk, Inner Circle, Block E, Connaught Place, New Delhi, Delhi 110001, India</p>
                     </div>
                   </div>
                   <div>
@@ -312,11 +311,10 @@ export default function About() {
             <div>
               <h4 className="font-bold text-lg mb-4">Company</h4>
               <div className="text-sm text-white/80 space-y-2">
+                <img src="/logo.png" alt="Sports IQ Play" className="h-16 w-auto mb-3" />
                 <p className="font-semibold text-white">Sports IQ Play Private Limited</p>
-                <p>CIN: U74999DL2023PTC123456</p>
-                <p>PAN: AAFCS1234E</p>
-                <p className="mt-3">New Delhi, Delhi, India</p>
-                <p>Est. January 2025</p>
+                <p className="text-secondary">Test Your Cricket IQ</p>
+                <p className="mt-3">E-38/39, Rajiv Chowk, Inner Circle, Block E, Connaught Place, New Delhi, Delhi 110001, India</p>
               </div>
             </div>
           </div>
