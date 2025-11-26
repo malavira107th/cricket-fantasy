@@ -1,3 +1,4 @@
+import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { APP_LOGO, APP_TITLE, COMPANY_NAME, COMPANY_ADDRESS, TAGLINE } from "@/const";
@@ -6,6 +7,10 @@ import { useState, useEffect } from "react";
 import { getCurrentMatches } from "@/lib/cricketApi";
 
 export default function Home() {
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading: authLoading, error, isAuthenticated, logout } = useAuth();
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [featuredMatches, setFeaturedMatches] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
