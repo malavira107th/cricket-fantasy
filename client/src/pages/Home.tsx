@@ -140,7 +140,7 @@ export default function Home() {
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
                   <div className="w-16 h-16 flex-shrink-0">
-                    <img src="/icon-free-transparent.png" alt="Free to Play" className="w-full h-full object-contain" />
+                    <img src="/icon-free-new.png" alt="Free to Play" className="w-full h-full object-contain" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2 text-gray-900">Free to Play</h3>
@@ -157,7 +157,7 @@ export default function Home() {
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
                   <div className="w-16 h-16 flex-shrink-0">
-                    <img src="/icon-skill-transparent.png" alt="Skill Based" className="w-full h-full object-contain" />
+                    <img src="/icon-skill-new.png" alt="Skill Based" className="w-full h-full object-contain" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2 text-gray-900">Skill Based</h3>
@@ -174,7 +174,7 @@ export default function Home() {
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
                   <div className="w-16 h-16 flex-shrink-0">
-                    <img src="/icon-fun-transparent.png" alt="No Prizes - Pure Fun" className="w-full h-full object-contain" />
+                    <img src="/icon-fun-new.png" alt="No Prizes - Pure Fun" className="w-full h-full object-contain" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2 text-gray-900">No Prizes - Pure Fun</h3>
