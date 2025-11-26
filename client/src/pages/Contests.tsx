@@ -232,15 +232,47 @@ export default function Contests() {
                   {/* Teams */}
                   <div className="flex items-center justify-center gap-6 mb-4">
                     <div className="text-center">
-                      <div className={`w-16 h-16 rounded-full ${team1Color} flex items-center justify-center mb-2 mx-auto`}>
-                        <span className="text-white font-bold text-lg">{teamCodes.team1}</span>
-                      </div>
+                      {contest.teamInfo && contest.teamInfo[0]?.img ? (
+                        <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200 mb-2 mx-auto bg-white">
+                          <img 
+                            src={contest.teamInfo[0].img} 
+                            alt={contest.teamInfo[0].name}
+                            className="w-full h-full object-contain p-1"
+                            onError={(e) => {
+                              // Fallback to colored circle with code if image fails
+                              e.currentTarget.style.display = 'none';
+                              e.currentTarget.parentElement!.innerHTML = `<div class="w-full h-full ${team1Color} flex items-center justify-center"><span class="text-white font-bold text-lg">${teamCodes.team1}</span></div>`;
+                            }}
+                          />
+                        </div>
+                      ) : (
+                        <div className={`w-16 h-16 rounded-full ${team1Color} flex items-center justify-center mb-2 mx-auto`}>
+                          <span className="text-white font-bold text-lg">{teamCodes.team1}</span>
+                        </div>
+                      )}
+                      <p className="text-xs font-semibold text-gray-700">{contest.teams[0]?.substring(0, 15) || teamCodes.team1}</p>
                     </div>
                     <span className="text-2xl font-bold text-gray-400">vs</span>
                     <div className="text-center">
-                      <div className={`w-16 h-16 rounded-full ${team2Color} flex items-center justify-center mb-2 mx-auto`}>
-                        <span className="text-white font-bold text-lg">{teamCodes.team2}</span>
-                      </div>
+                      {contest.teamInfo && contest.teamInfo[1]?.img ? (
+                        <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200 mb-2 mx-auto bg-white">
+                          <img 
+                            src={contest.teamInfo[1].img} 
+                            alt={contest.teamInfo[1].name}
+                            className="w-full h-full object-contain p-1"
+                            onError={(e) => {
+                              // Fallback to colored circle with code if image fails
+                              e.currentTarget.style.display = 'none';
+                              e.currentTarget.parentElement!.innerHTML = `<div class="w-full h-full ${team2Color} flex items-center justify-center"><span class="text-white font-bold text-lg">${teamCodes.team2}</span></div>`;
+                            }}
+                          />
+                        </div>
+                      ) : (
+                        <div className={`w-16 h-16 rounded-full ${team2Color} flex items-center justify-center mb-2 mx-auto`}>
+                          <span className="text-white font-bold text-lg">{teamCodes.team2}</span>
+                        </div>
+                      )}
+                      <p className="text-xs font-semibold text-gray-700">{contest.teams[1]?.substring(0, 15) || teamCodes.team2}</p>
                     </div>
                   </div>
 
@@ -253,7 +285,7 @@ export default function Contests() {
                         <span>Starts in: <span className="text-red-600 font-bold">{matchStatus}</span></span>
                       )}
                     </p>
-                    <p className="text-xs text-gray-500">{contest.matchType.toUpperCase()} | {contest.venue.split(',')[0]}</p>
+                    <p className="text-xs text-gray-500">{contest.matchType?.toUpperCase() || 'Match'} | {contest.venue?.split(',')[0] || 'TBD'}</p>
                   </div>
 
                   {/* Participants */}
