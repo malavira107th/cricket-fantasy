@@ -242,6 +242,7 @@ export default function About() {
                     <div className="space-y-3 text-gray-700">
                       <p><strong>Company Name:</strong> Sports IQ Play Private Limited</p>
                       <p><strong>Type:</strong> Private Limited Company</p>
+                      <p><strong>GST:</strong> 06SCECT9876L1Z4</p>
                       <p><strong>Tagline:</strong> Test Your Cricket IQ</p>
                       <p><strong>Address:</strong> E-38/39, Rajiv Chowk, Inner Circle, Block E, Connaught Place, New Delhi, Delhi 110001, India</p>
                     </div>
