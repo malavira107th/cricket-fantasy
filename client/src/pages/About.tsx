@@ -262,12 +262,12 @@ export default function About() {
                 <div className="mt-8 pt-8 border-t border-gray-200">
                   <h3 className="font-bold text-xl text-primary mb-4">Authorized Advertising Partner</h3>
                   <div className="space-y-3 text-gray-700">
-                    <p><strong>Company Name:</strong> SDSURABHI INFRA PRIVATE LIMITED</p>
+                    <p><strong>Company Name:</strong> <a href="https://sdsurabhi.in/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">SDSURABHI INFRA PRIVATE LIMITED</a></p>
                     <p><strong>CIN:</strong> U41002UP2023PTC194590</p>
                     <p><strong>GST:</strong> 09ABMCS3759A1Z4</p>
                     <p><strong>Address:</strong> 48/2, Bijnour, Ayodhya Puri 2, Lucknow, Uttar Pradesh 226008, India</p>
                     <p className="text-sm text-gray-600 mt-4 italic">
-                      SDSURABHI INFRA PRIVATE LIMITED is our authorized advertising and digital marketing partner, managing all promotional activities and online advertising campaigns on behalf of Sports IQ Play Private Limited.
+                      <a href="https://sdsurabhi.in/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">SDSURABHI INFRA PRIVATE LIMITED</a> is our authorized advertising and digital marketing partner, managing all promotional activities and online advertising campaigns on behalf of Sports IQ Play Private Limited.
                     </p>
                   </div>
                 </div>
@@ -338,7 +338,7 @@ export default function About() {
           {/* Authorized Advertising Partner */}
           <div className="border-t border-white/20 pt-6 pb-4">
             <p className="text-sm text-white/70">
-              <span className="font-semibold text-white">Authorized Advertising Partner:</span> SDSURABHI INFRA PRIVATE LIMITED
+              <span className="font-semibold text-white">Authorized Advertising Partner:</span> <a href="https://sdsurabhi.in/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">SDSURABHI INFRA PRIVATE LIMITED</a>
             </p>
             <p className="text-xs text-white/60 mt-1">
               CIN: U41002UP2023PTC194590

@@ -379,7 +379,7 @@ export default function Contests() {
           {/* Authorized Advertising Partner */}
           <div className="border-t border-white/20 pt-6 pb-4">
             <p className="text-sm text-white/70">
-              <span className="font-semibold text-white">Authorized Advertising Partner:</span> SDSURABHI INFRA PRIVATE LIMITED
+              <span className="font-semibold text-white">Authorized Advertising Partner:</span> <a href="https://sdsurabhi.in/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">SDSURABHI INFRA PRIVATE LIMITED</a>
             </p>
             <p className="text-xs text-white/60 mt-1">
               CIN: U41002UP2023PTC194590
