@@ -257,6 +257,19 @@ export default function About() {
                     </div>
                   </div>
                 </div>
+
+                <div className="mt-8 pt-8 border-t border-gray-200">
+                  <h3 className="font-bold text-xl text-primary mb-4">Authorized Advertising Partner</h3>
+                  <div className="space-y-3 text-gray-700">
+                    <p><strong>Company Name:</strong> SDSURABHI INFRA PRIVATE LIMITED</p>
+                    <p><strong>CIN:</strong> U41002UP2023PTC194590</p>
+                    <p><strong>GST:</strong> 09ABMCS3759A1Z4</p>
+                    <p><strong>Address:</strong> 48/2, Bijnour, Ayodhya Puri 2, Lucknow, Uttar Pradesh 226008, India</p>
+                    <p className="text-sm text-gray-600 mt-4 italic">
+                      SDSURABHI INFRA PRIVATE LIMITED is our authorized advertising and digital marketing partner, managing all promotional activities and online advertising campaigns on behalf of Sports IQ Play Private Limited.
+                    </p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </section>
@@ -321,6 +334,17 @@ export default function About() {
 
           <div className="border-t border-white/20 pt-6 pb-4">
             <p className="text-sm text-white/70 leading-relaxed">
+          {/* Authorized Advertising Partner */}
+          <div className="border-t border-white/20 pt-6 pb-4">
+            <p className="text-sm text-white/70">
+              <span className="font-semibold text-white">Authorized Advertising Partner:</span> SDSURABHI INFRA PRIVATE LIMITED
+            </p>
+            <p className="text-xs text-white/60 mt-1">
+              CIN: U41002UP2023PTC194590
+            </p>
+          </div>
+
+
               <span className="font-semibold text-white">Legal Disclaimer:</span> This platform is NOT available in Andhra Pradesh, Assam, Odisha, Telangana, Nagaland, and Sikkim. Only users 18 years and older are permitted. This is a skill-based, free-to-play platform with no real money involved.
             </p>
           </div>

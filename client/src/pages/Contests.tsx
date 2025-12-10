@@ -376,6 +376,17 @@ export default function Contests() {
 
           <div className="border-t border-white/20 pt-6 pb-4">
             <p className="text-sm text-white/70 leading-relaxed">
+          {/* Authorized Advertising Partner */}
+          <div className="border-t border-white/20 pt-6 pb-4">
+            <p className="text-sm text-white/70">
+              <span className="font-semibold text-white">Authorized Advertising Partner:</span> SDSURABHI INFRA PRIVATE LIMITED
+            </p>
+            <p className="text-xs text-white/60 mt-1">
+              CIN: U41002UP2023PTC194590
+            </p>
+          </div>
+
+
               <span className="font-semibold text-white">Legal Disclaimer:</span> This platform is NOT available in Andhra Pradesh, Assam, Odisha, Telangana, Nagaland, and Sikkim. Only users 18 years and older are permitted. This is a skill-based, free-to-play platform with no real money involved.
             </p>
           </div>
