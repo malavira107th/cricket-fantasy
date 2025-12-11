@@ -236,38 +236,25 @@ export default function About() {
             <h2 className="text-4xl font-bold text-primary mb-8">Company Information</h2>
             <Card className="bg-white shadow-lg border-l-4 border-l-primary">
               <CardContent className="p-8">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="font-bold text-xl text-primary mb-4">Legal Details</h3>
-                    <div className="space-y-3 text-gray-700">
-                      <p><strong>Company Name:</strong> Sports IQ Play Private Limited</p>
-                      <p><strong>Type:</strong> Private Limited Company</p>
-                      <p><strong>GST:</strong> 06SCECT9876L1Z4</p>
-                      <p><strong>Tagline:</strong> Test Your Cricket IQ</p>
-                      <p><strong>Address:</strong> E-38/39, Rajiv Chowk, Inner Circle, Block E, Connaught Place, New Delhi, Delhi 110001, India</p>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-xl text-primary mb-4">Registered Office</h3>
-                    <div className="space-y-3 text-gray-700">
-                      <p>E-38/39, Rajiv Chowk</p>
-                      <p>Inner Circle, Block E</p>
-                      <p>Connaught Place</p>
-                      <p>New Delhi, Delhi 110001</p>
-                      <p>India</p>
-                    </div>
-                  </div>
+                <div className="space-y-3 text-gray-700">
+                  <h3 className="font-bold text-xl text-primary mb-4">Legal Entity</h3>
+                  <p><strong>Company Name:</strong> <a href="https://sdsurabhi.in/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">SDSURABHI INFRA PRIVATE LIMITED</a></p>
+                  <p><strong>CIN:</strong> U41002UP2023PTC194590</p>
+                  <p><strong>GST:</strong> 09ABMCS3759A1Z4</p>
+                  <p><strong>Type:</strong> Private Limited Company</p>
+                  <p><strong>Address:</strong> 48/2, Bijnour, Ayodhya Puri 2, Lucknow, Uttar Pradesh 226008, India</p>
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-gray-200">
-                  <h3 className="font-bold text-xl text-primary mb-4">Operating Company</h3>
+                  <h3 className="font-bold text-xl text-primary mb-4">Platform Brand</h3>
                   <div className="space-y-3 text-gray-700">
-                    <p><strong>Company Name:</strong> <a href="https://sdsurabhi.in/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">SDSURABHI INFRA PRIVATE LIMITED</a></p>
-                    <p><strong>CIN:</strong> U41002UP2023PTC194590</p>
-                    <p><strong>GST:</strong> 09ABMCS3759A1Z4</p>
-                    <p><strong>Address:</strong> 48/2, Bijnour, Ayodhya Puri 2, Lucknow, Uttar Pradesh 226008, India</p>
+                    <p><strong>Brand Name:</strong> Sports IQ Play</p>
+                    <p><strong>Legal Owner:</strong> Sports IQ Play Private Limited</p>
+                    <p><strong>GST:</strong> 06SCECT9876L1Z4</p>
+                    <p><strong>Tagline:</strong> Test Your Cricket IQ</p>
+                    <p><strong>Address:</strong> E-38/39, Rajiv Chowk, Inner Circle, Block E, Connaught Place, New Delhi, Delhi 110001, India</p>
                     <p className="text-sm text-gray-600 mt-4 italic">
-                      Sports IQ Play is fully operated and managed by <a href="https://sdsurabhi.in/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">SDSURABHI INFRA PRIVATE LIMITED</a>. All platform operations, technical infrastructure, marketing, and business activities are handled by SDSURABHI INFRA PRIVATE LIMITED on behalf of Sports IQ Play Private Limited.
+                      Sports IQ Play platform is owned by Sports IQ Play Private Limited and fully operated by <a href="https://sdsurabhi.in/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">SDSURABHI INFRA PRIVATE LIMITED</a>. All legal, operational, technical, and business activities are managed by SDSURABHI INFRA PRIVATE LIMITED.
                     </p>
                   </div>
                 </div>
