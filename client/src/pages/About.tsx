@@ -243,7 +243,7 @@ export default function About() {
                   <p><strong>CIN:</strong> U41002UP2023PTC194590</p>
                   <p><strong>GST:</strong> 09ABMCS3759A1Z4</p>
                   <p><strong>Type:</strong> Private Limited Company</p>
-                  <p><strong>Registered Address:</strong> 48/2, Bijnour, Ayodhya Puri 2, Lucknow, Uttar Pradesh 226008, India</p>
+                  <p><strong>Registered Address:</strong> Ram Acchayvar 48/2, Ayodhya Puri 2 Bijnour, Sarojini Nagar, Lucknow, Uttar Pradesh 226008, India</p>
                   <p className="text-sm text-gray-600 mt-4 italic">
                     SDSURABHI INFRA PRIVATE LIMITED operates the Sports IQ Play cricket fantasy platform. All legal, operational, technical, marketing, and business activities are managed by SDSURABHI INFRA PRIVATE LIMITED.
                   </p>
@@ -304,10 +304,10 @@ export default function About() {
               <div className="text-sm text-white/80 space-y-2">
                 <img src="/logo.png" alt="Sports IQ Play" className="h-16 w-auto mb-3" />
                 <p className="font-semibold text-white">SDSURABHI INFRA PRIVATE LIMITED</p>
-                <p className="text-white/60 text-xs">Trading As: Sports IQ Play</p>
-                <p className="text-white/60 text-xs">Trading As: Sports IQ Play</p>
+                <p className="text-white/60 text-xs">Brand Name: Sports IQ Play</p>
+                <p className="text-white/60 text-xs">Brand Name: Sports IQ Play</p>
                 <p className="text-secondary">Test Your Cricket IQ</p>
-                <p className="mt-3">48/2, Bijnour, Ayodhya Puri 2, Lucknow, Uttar Pradesh 226008, India</p>
+                <p className="mt-3">Ram Acchayvar 48/2, Ayodhya Puri 2 Bijnour, Sarojini Nagar, Lucknow, Uttar Pradesh 226008, India</p>
               </div>
             </div>
           </div>

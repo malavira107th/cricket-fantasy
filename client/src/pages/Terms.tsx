@@ -46,7 +46,7 @@ export default function Terms() {
             <section className="mb-10">
               <h2 className="text-3xl font-bold text-primary mb-4">1. Introduction and Acceptance</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Welcome to Sports IQ Play! These Terms and Conditions ("Terms") govern your access to and use of the Sports IQ Play website and services (collectively, the "Platform"). The Platform is operated by SDSURABHI INFRA PRIVATE LIMITED (trading as Sports IQ Play), a company incorporated under the Companies Act, 2013, with its registered office at 48/2, Bijnour, Ayodhya Puri 2, Lucknow, Uttar Pradesh 226008, India (CIN: U41002UP2023PTC194590).
+                Welcome to Sports IQ Play! These Terms and Conditions ("Terms") govern your access to and use of the Sports IQ Play website and services (collectively, the "Platform"). The Platform is operated by SDSURABHI INFRA PRIVATE LIMITED (trading as Sports IQ Play), a company incorporated under the Companies Act, 2013, with its registered office at Ram Acchayvar 48/2, Ayodhya Puri 2 Bijnour, Sarojini Nagar, Lucknow, Uttar Pradesh 226008, India (CIN: U41002UP2023PTC194590).
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 By accessing, browsing, or using our Platform, you acknowledge that you have read, understood, and agree to be bound by these Terms, along with our Privacy Policy and Responsible Gaming Policy. If you do not agree with any part of these Terms, you must not use our Platform.
@@ -339,7 +339,7 @@ export default function Terms() {
               <p className="text-gray-700 leading-relaxed">
                 For any questions about these Terms, please contact us at:<br/>
                 <strong>SDSURABHI INFRA PRIVATE LIMITED</strong><br/>
-                Trading As: Sports IQ Play<br/>
+                Brand Name: Sports IQ Play<br/>
                 48/2, Bijnour, Ayodhya Puri 2<br/>
                 Lucknow, Uttar Pradesh 226008, India<br/>
                 CIN: U41002UP2023PTC194590<br/>

@@ -368,10 +368,10 @@ export default function Contests() {
               <div className="text-sm text-white/80 space-y-2">
                 <img src="/logo.png" alt="Sports IQ Play" className="h-16 w-auto mb-3" />
                 <p className="font-semibold text-white">SDSURABHI INFRA PRIVATE LIMITED</p>
-                <p className="text-white/60 text-xs">Trading As: Sports IQ Play</p>
-                <p className="text-white/60 text-xs">Trading As: Sports IQ Play</p>
+                <p className="text-white/60 text-xs">Brand Name: Sports IQ Play</p>
+                <p className="text-white/60 text-xs">Brand Name: Sports IQ Play</p>
                 <p className="text-secondary">Test Your Cricket IQ</p>
-                <p className="mt-3">48/2, Bijnour, Ayodhya Puri 2, Lucknow, Uttar Pradesh 226008, India</p>
+                <p className="mt-3">Ram Acchayvar 48/2, Ayodhya Puri 2 Bijnour, Sarojini Nagar, Lucknow, Uttar Pradesh 226008, India</p>
               </div>
             </div>
           </div>

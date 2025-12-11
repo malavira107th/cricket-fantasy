@@ -636,7 +636,7 @@ export default function Home() {
               </div>
               <div className="text-sm text-white/80 space-y-2">
                 <p className="font-semibold text-white">{COMPANY_NAME}</p>
-                <p className="text-white/60 text-xs">Trading As: Sports IQ Play</p>
+                <p className="text-white/60 text-xs">Brand Name: Sports IQ Play</p>
                 <p className="italic text-secondary">{TAGLINE}</p>
                 <p className="mt-3">{COMPANY_ADDRESS}</p>
               </div>

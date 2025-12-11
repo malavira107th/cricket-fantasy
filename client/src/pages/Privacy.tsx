@@ -334,7 +334,7 @@ export default function Privacy() {
               </p>
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
                 <p className="text-gray-700 mb-2"><strong>SDSURABHI INFRA PRIVATE LIMITED</strong></p>
-                <p className="text-gray-700 mb-2">Trading As: Sports IQ Play</p>
+                <p className="text-gray-700 mb-2">Brand Name: Sports IQ Play</p>
                 <p className="text-gray-700 mb-2">48/2, Bijnour, Ayodhya Puri 2</p>
                 <p className="text-gray-700 mb-2">Lucknow, Uttar Pradesh 226008, India</p>
                 <p className="text-gray-700 mb-2">CIN: U41002UP2023PTC194590</p>
