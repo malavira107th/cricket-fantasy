@@ -46,7 +46,7 @@ export default function Privacy() {
             <section className="mb-10">
               <h2 className="text-3xl font-bold text-primary mb-4">1. Introduction</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Sports IQ Play Private Limited ("we," "us," or "our") is committed to protecting your privacy and personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services (collectively, the "Platform").
+                SDSURABHI INFRA PRIVATE LIMITED (trading as Sports IQ Play) ("we," "us," or "our") is committed to protecting your privacy and personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services (collectively, the "Platform").
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 We understand the importance of privacy, especially in the digital age. This policy is designed to help you understand:
@@ -333,9 +333,11 @@ export default function Privacy() {
                 If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
               </p>
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
-                <p className="text-gray-700 mb-2"><strong>Sports IQ Play Private Limited</strong></p>
-                <p className="text-gray-700 mb-2">E-38/39, Rajiv Chowk, Inner Circle, Block E</p>
-                <p className="text-gray-700 mb-2">Connaught Place, New Delhi, Delhi 110001, India</p>
+                <p className="text-gray-700 mb-2"><strong>SDSURABHI INFRA PRIVATE LIMITED</strong></p>
+                <p className="text-gray-700 mb-2">Trading As: Sports IQ Play</p>
+                <p className="text-gray-700 mb-2">48/2, Bijnour, Ayodhya Puri 2</p>
+                <p className="text-gray-700 mb-2">Lucknow, Uttar Pradesh 226008, India</p>
+                <p className="text-gray-700 mb-2">CIN: U41002UP2023PTC194590</p>
                 <p className="text-gray-700 mb-2"><strong>Email:</strong> privacy@sportsiqplay.com</p>
                 <p className="text-gray-700"><strong>Response Time:</strong> We aim to respond to all privacy inquiries within 7 business days</p>
               </div>
@@ -371,7 +373,7 @@ export default function Privacy() {
       <footer className="bg-primary text-white py-8 mt-16">
         <div className="container text-center">
           <p className="text-sm text-white/70">
-            © 2025 Sports IQ Play Private Limited. All rights reserved.
+            © 2025 SDSURABHI INFRA PRIVATE LIMITED. All rights reserved.
           </p>
         </div>
       </footer>

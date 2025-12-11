@@ -502,7 +502,7 @@ export default function ResponsibleGaming() {
       <footer className="bg-primary text-white py-8 mt-16">
         <div className="container text-center">
           <p className="text-sm text-white/70">
-            © 2025 Sports IQ Play Private Limited. All rights reserved.
+            © 2025 SDSURABHI INFRA PRIVATE LIMITED. All rights reserved.
           </p>
         </div>
       </footer>

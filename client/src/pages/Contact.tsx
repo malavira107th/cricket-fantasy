@@ -373,9 +373,11 @@ export default function Contact() {
               <h4 className="font-bold text-lg mb-4">Company</h4>
               <div className="text-sm text-white/80 space-y-2">
                 <img src="/logo.png" alt="Sports IQ Play" className="h-16 w-auto mb-3" />
-                <p className="font-semibold text-white">Sports IQ Play Private Limited</p>
+                <p className="font-semibold text-white">SDSURABHI INFRA PRIVATE LIMITED</p>
+                <p className="text-white/60 text-xs">Trading As: Sports IQ Play</p>
+                <p className="text-white/60 text-xs">Trading As: Sports IQ Play</p>
                 <p className="text-secondary">Test Your Cricket IQ</p>
-                <p className="mt-3">E-38/39, Rajiv Chowk, Inner Circle, Block E, Connaught Place, New Delhi, Delhi 110001, India</p>
+                <p className="mt-3">48/2, Bijnour, Ayodhya Puri 2, Lucknow, Uttar Pradesh 226008, India</p>
               </div>
             </div>
           </div>
@@ -399,7 +401,7 @@ export default function Contact() {
 
           <div className="border-t border-white/20 pt-4">
             <p className="text-sm text-white/70 text-center">
-              © 2025 Sports IQ Play Private Limited. All rights reserved.
+              © 2025 SDSURABHI INFRA PRIVATE LIMITED. All rights reserved.
             </p>
           </div>
         </div>

@@ -46,7 +46,7 @@ export default function Terms() {
             <section className="mb-10">
               <h2 className="text-3xl font-bold text-primary mb-4">1. Introduction and Acceptance</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Welcome to Sports IQ Play! These Terms and Conditions ("Terms") govern your access to and use of the Sports IQ Play website and services (collectively, the "Platform"). The Platform is owned and operated by Sports IQ Play Private Limited, a company incorporated under the Companies Act, 2013, with its registered office at E-38/39, Rajiv Chowk, Inner Circle, Block E, Connaught Place, New Delhi, Delhi 110001, India.
+                Welcome to Sports IQ Play! These Terms and Conditions ("Terms") govern your access to and use of the Sports IQ Play website and services (collectively, the "Platform"). The Platform is operated by SDSURABHI INFRA PRIVATE LIMITED (trading as Sports IQ Play), a company incorporated under the Companies Act, 2013, with its registered office at 48/2, Bijnour, Ayodhya Puri 2, Lucknow, Uttar Pradesh 226008, India (CIN: U41002UP2023PTC194590).
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 By accessing, browsing, or using our Platform, you acknowledge that you have read, understood, and agree to be bound by these Terms, along with our Privacy Policy and Responsible Gaming Policy. If you do not agree with any part of these Terms, you must not use our Platform.
@@ -126,7 +126,7 @@ export default function Terms() {
                 <li><strong>No Warranty:</strong> We do not warrant or guarantee the accuracy, reliability, or availability of any data provided by third-party sources</li>
               </ul>
               <p className="text-gray-700 leading-relaxed">
-                <strong>Disclaimer:</strong> Sports IQ Play Private Limited is not responsible for any errors, omissions, delays, or inaccuracies in match data provided by third-party API sources. Users acknowledge that contest results and scores displayed on the Platform are based on data from external sources over which we have no control.
+                <strong>Disclaimer:</strong> SDSURABHI INFRA PRIVATE LIMITED is not responsible for any errors, omissions, delays, or inaccuracies in match data provided by third-party API sources. Users acknowledge that contest results and scores displayed on the Platform are based on data from external sources over which we have no control.
               </p>
             </section>
 
@@ -205,7 +205,7 @@ export default function Terms() {
               
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">6.1 Platform Ownership</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                All content, features, and functionality on the Platform, including but not limited to text, graphics, logos, icons, images, audio clips, digital downloads, data compilations, and software, are the exclusive property of Sports IQ Play Private Limited or its licensors and are protected by Indian and international copyright, trademark, patent, trade secret, and other intellectual property laws.
+                All content, features, and functionality on the Platform, including but not limited to text, graphics, logos, icons, images, audio clips, digital downloads, data compilations, and software, are the exclusive property of SDSURABHI INFRA PRIVATE LIMITED or its licensors and are protected by Indian and international copyright, trademark, patent, trade secret, and other intellectual property laws.
               </p>
 
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">6.2 Limited License</h3>
@@ -215,7 +215,7 @@ export default function Terms() {
 
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">6.3 Trademarks</h3>
               <p className="text-gray-700 leading-relaxed">
-                "Sports IQ Play," our logo, and all related names, logos, product and service names, designs, and slogans are trademarks of Sports IQ Play Private Limited. You must not use such marks without our prior written permission.
+                "Sports IQ Play," our logo, and all related names, logos, product and service names, designs, and slogans are trademarks of SDSURABHI INFRA PRIVATE LIMITED. You must not use such marks without our prior written permission.
               </p>
             </section>
 
@@ -235,7 +235,7 @@ export default function Terms() {
 
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">7.3 Limitation of Liability</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                To the fullest extent permitted by law, Sports IQ Play Private Limited, its directors, employees, partners, agents, suppliers, or affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, use, goodwill, or other intangible losses, resulting from:
+                To the fullest extent permitted by law, SDSURABHI INFRA PRIVATE LIMITED, its directors, employees, partners, agents, suppliers, or affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, use, goodwill, or other intangible losses, resulting from:
               </p>
               <ul className="list-disc list-inside text-gray-700 mb-4 space-y-2">
                 <li>Your access to or use of (or inability to access or use) the Platform</li>
@@ -317,7 +317,7 @@ export default function Terms() {
               
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">10.1 Entire Agreement</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                These Terms, together with our Privacy Policy and Responsible Gaming Policy, constitute the entire agreement between you and Sports IQ Play Private Limited regarding the use of the Platform.
+                These Terms, together with our Privacy Policy and Responsible Gaming Policy, constitute the entire agreement between you and SDSURABHI INFRA PRIVATE LIMITED regarding the use of the Platform.
               </p>
 
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">10.2 Severability</h3>
@@ -338,9 +338,11 @@ export default function Terms() {
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">10.5 Contact Information</h3>
               <p className="text-gray-700 leading-relaxed">
                 For any questions about these Terms, please contact us at:<br/>
-                <strong>Sports IQ Play Private Limited</strong><br/>
-                E-38/39, Rajiv Chowk, Inner Circle, Block E<br/>
-                Connaught Place, New Delhi, Delhi 110001, India<br/>
+                <strong>SDSURABHI INFRA PRIVATE LIMITED</strong><br/>
+                Trading As: Sports IQ Play<br/>
+                48/2, Bijnour, Ayodhya Puri 2<br/>
+                Lucknow, Uttar Pradesh 226008, India<br/>
+                CIN: U41002UP2023PTC194590<br/>
                 Email: legal@sportsiqplay.com
               </p>
             </section>
@@ -369,7 +371,7 @@ export default function Terms() {
       <footer className="bg-primary text-white py-8 mt-16">
         <div className="container text-center">
           <p className="text-sm text-white/70">
-            © 2025 Sports IQ Play Private Limited. All rights reserved.
+            © 2025 SDSURABHI INFRA PRIVATE LIMITED. All rights reserved.
           </p>
         </div>
       </footer>

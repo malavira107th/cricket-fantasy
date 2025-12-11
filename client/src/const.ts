@@ -3,8 +3,8 @@ export { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 export const APP_TITLE = "Sports IQ Play";
 export const APP_LOGO = "/logo.png";
 export const TAGLINE = "Test Your Cricket IQ";
-export const COMPANY_NAME = "Sports IQ Play Private Limited";
-export const COMPANY_ADDRESS = "E-38/39, Rajiv Chowk, Inner Circle, Block E, Connaught Place, New Delhi, Delhi 110001, India";
+export const COMPANY_NAME = "SDSURABHI INFRA PRIVATE LIMITED";
+export const COMPANY_ADDRESS = "48/2, Bijnour, Ayodhya Puri 2, Lucknow, Uttar Pradesh 226008, India";
 export const DOMAIN = "sportsiqplay.com";
 export const CONTACT_EMAIL = "contact@sportsiqplay.com";
 
