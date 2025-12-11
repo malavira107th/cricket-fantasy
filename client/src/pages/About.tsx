@@ -65,7 +65,7 @@ export default function About() {
           {/* Our Story */}
           <section className="mb-16">
             <h2 className="text-4xl font-bold text-primary mb-6">Our Story</h2>
-            <div className="prose prose-lg max-w-none">
+            <div className="max-w-none">
               <p className="text-gray-700 leading-relaxed mb-4">
                 Sports IQ Play was born from a simple idea: cricket fantasy should be about passion, knowledge, and fun—not money. We're a team of cricket enthusiasts who believe that the thrill of building your dream team and competing with fellow fans shouldn't require opening your wallet.
               </p>
