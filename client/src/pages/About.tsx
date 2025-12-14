@@ -304,7 +304,6 @@ export default function About() {
                 <img src="/logo.png" alt="SDSURABHI" className="h-16 w-auto mb-3" />
                 <p className="font-semibold text-white">SDSURABHI INFRA PRIVATE LIMITED</p>
                 <p className="text-white/60 text-xs">Brand Name: SDSURABHI</p>
-                <p className="text-white/60 text-xs">Brand Name: SDSURABHI</p>
                 <p className="text-secondary">Test Your Cricket IQ</p>
                 <p className="mt-3">Ram Acchayvar 48/2, Ayodhya Puri 2 Bijnour, Sarojini Nagar, Lucknow, Uttar Pradesh 226008, India</p>
               </div>
