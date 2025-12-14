@@ -93,8 +93,7 @@ export default function Contests() {
             <Link href="/" className="flex items-center gap-3">
               <img src={APP_LOGO} alt={APP_TITLE} className="h-12 w-auto" />
               <div className="text-xl font-bold hidden sm:block">
-                <span className="text-white">Sports IQ </span>
-                <span className="text-secondary">Play</span>
+                <span className="text-white">SDSURABHI</span>
               </div>
             </Link>
 
@@ -366,10 +365,10 @@ export default function Contests() {
             <div>
               <h4 className="font-bold text-lg mb-4">Company</h4>
               <div className="text-sm text-white/80 space-y-2">
-                <img src="/logo.png" alt="Sports IQ Play" className="h-16 w-auto mb-3" />
+                <img src="/logo.png" alt="SDSURABHI" className="h-16 w-auto mb-3" />
                 <p className="font-semibold text-white">SDSURABHI INFRA PRIVATE LIMITED</p>
-                <p className="text-white/60 text-xs">Brand Name: Sports IQ Play</p>
-                <p className="text-white/60 text-xs">Brand Name: Sports IQ Play</p>
+                <p className="text-white/60 text-xs">Brand Name: SDSURABHI</p>
+                <p className="text-white/60 text-xs">Brand Name: SDSURABHI</p>
                 <p className="text-secondary">Test Your Cricket IQ</p>
                 <p className="mt-3">Ram Acchayvar 48/2, Ayodhya Puri 2 Bijnour, Sarojini Nagar, Lucknow, Uttar Pradesh 226008, India</p>
               </div>
@@ -381,7 +380,7 @@ export default function Contests() {
           {/* Authorized Advertising Partner */}
           <div className="border-t border-white/20 pt-6 pb-4">
             <p className="text-sm text-white/70">
-              <span className="font-semibold text-white">Operated by:</span> <a href="https://sdsurabhi.in/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">SDSURABHI INFRA PRIVATE LIMITED</a>
+              <span className="font-semibold text-white">Operated by:</span> SDSURABHI INFRA PRIVATE LIMITED
             </p>
             <p className="text-xs text-white/60 mt-1">
               CIN: U41002UP2023PTC194590 | GST: 09ABMCS3759A1Z4

@@ -71,8 +71,7 @@ export default function ResponsibleGaming() {
             <Link href="/" className="flex items-center gap-3">
               <img src={APP_LOGO} alt={APP_TITLE} className="h-12 w-auto" />
               <div className="text-xl font-bold hidden sm:block">
-                <span className="text-white">Sports IQ </span>
-                <span className="text-secondary">Play</span>
+                <span className="text-white">SDSURABHI</span>
               </div>
             </Link>
 
@@ -105,7 +104,7 @@ export default function ResponsibleGaming() {
             <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-primary mb-4">Our Commitment to Responsible Gaming</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                At Sports IQ Play, we believe that fantasy sports should be a fun, entertaining, and skill-based activity that enhances your enjoyment of cricket. While our platform is completely free with no monetary stakes or prizes, we recognize that any form of gaming—even entertainment-only—can become problematic if not approached responsibly.
+                At SDSURABHI, we believe that fantasy sports should be a fun, entertaining, and skill-based activity that enhances your enjoyment of cricket. While our platform is completely free with no monetary stakes or prizes, we recognize that any form of gaming—even entertainment-only—can become problematic if not approached responsibly.
               </p>
               <p className="text-gray-700 leading-relaxed">
                 We are committed to promoting healthy gaming habits and providing resources to help you maintain a balanced relationship with fantasy sports. This page outlines our responsible gaming guidelines, warning signs to watch for, and tools to help you stay in control.
@@ -152,7 +151,7 @@ export default function ResponsibleGaming() {
                     <div>
                       <h3 className="text-xl font-bold text-primary mb-2">Play for Fun</h3>
                       <p className="text-gray-700">
-                        Remember, Sports IQ Play is purely for entertainment. There are no prizes or rewards. If you're not enjoying it, take a break. It should enhance your cricket experience, not dominate it.
+                        Remember, SDSURABHI is purely for entertainment. There are no prizes or rewards. If you're not enjoying it, take a break. It should enhance your cricket experience, not dominate it.
                       </p>
                     </div>
                   </div>
@@ -209,7 +208,7 @@ export default function ResponsibleGaming() {
             <Card className="bg-white shadow-lg">
               <CardContent className="p-8">
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  While Sports IQ Play doesn't involve money, excessive gaming of any kind can become problematic. Watch for these warning signs:
+                  While SDSURABHI doesn't involve money, excessive gaming of any kind can become problematic. Watch for these warning signs:
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="flex items-start gap-3">
@@ -419,7 +418,7 @@ export default function ResponsibleGaming() {
                   </div>
 
                   <div className="p-4 bg-blue-50 rounded-lg">
-                    <h4 className="font-bold text-primary mb-2">Sports IQ Play Support</h4>
+                    <h4 className="font-bold text-primary mb-2">SDSURABHI Support</h4>
                     <p className="text-gray-700 text-sm mb-1">Our support team is here to help</p>
                     <p className="text-gray-700 text-sm">Email: support@sportsiqplay.com</p>
                     <Link href="/contact" className="text-primary text-sm underline">Contact Us</Link>
@@ -435,7 +434,7 @@ export default function ResponsibleGaming() {
             <Card className="bg-white shadow-md">
               <CardContent className="p-8">
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  While Sports IQ Play is strictly for users 18 years and older, we recognize that parents and guardians play a crucial role in monitoring online activities. Here are some tips:
+                  While SDSURABHI is strictly for users 18 years and older, we recognize that parents and guardians play a crucial role in monitoring online activities. Here are some tips:
                 </p>
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start gap-3">
@@ -468,7 +467,7 @@ export default function ResponsibleGaming() {
             <div className="bg-gradient-to-r from-primary to-primary/80 text-white rounded-xl p-10">
               <h2 className="text-3xl font-bold mb-4">Our Commitment to You</h2>
               <p className="text-lg text-white/90 leading-relaxed mb-4">
-                At Sports IQ Play, responsible gaming is not just a policy—it's a core value. We are committed to:
+                At SDSURABHI, responsible gaming is not just a policy—it's a core value. We are committed to:
               </p>
               <ul className="space-y-2 text-white/90 text-lg">
                 <li>✓ Promoting healthy gaming habits and awareness</li>
@@ -478,7 +477,7 @@ export default function ResponsibleGaming() {
                 <li>✓ Maintaining a safe, fair, and transparent platform</li>
               </ul>
               <p className="text-lg text-white/90 leading-relaxed mt-6">
-                Remember: Sports IQ Play is meant to be fun. If it's not fun anymore, it's time to take a break. Your well-being is more important than any game.
+                Remember: SDSURABHI is meant to be fun. If it's not fun anymore, it's time to take a break. Your well-being is more important than any game.
               </p>
             </div>
           </section>

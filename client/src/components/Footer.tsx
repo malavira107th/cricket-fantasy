@@ -55,7 +55,7 @@ export default function Footer() {
 
         <div className="border-t border-white/20 pt-4">
           <p className="text-sm text-white/70 text-center">
-            © 2025 Sports IQ Play Private Limited. All rights reserved.
+            © 2025 SDSURABHI Private Limited. All rights reserved.
           </p>
         </div>
       </div>

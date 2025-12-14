@@ -121,7 +121,7 @@ export default function Signup() {
     };
 
     localStorage.setItem('userSession', JSON.stringify(userData));
-    toast.success("Account created successfully! Welcome to Sports IQ Play!");
+    toast.success("Account created successfully! Welcome to SDSURABHI!");
     
     // Redirect to dashboard
     setTimeout(() => {
@@ -138,8 +138,7 @@ export default function Signup() {
             <Link href="/" className="flex items-center gap-3">
               <img src={APP_LOGO} alt={APP_TITLE} className="h-12 w-auto" />
               <div className="text-xl font-bold hidden sm:block">
-                <span className="text-white">Sports IQ </span>
-                <span className="text-secondary">Play</span>
+                <span className="text-white">SDSURABHI</span>
               </div>
             </Link>
 
@@ -159,7 +158,7 @@ export default function Signup() {
             <CardHeader className="text-center">
               <CardTitle className="text-3xl font-bold text-primary">Create Account</CardTitle>
               <CardDescription className="text-base">
-                Join Sports IQ Play and start playing cricket fantasy for free!
+                Join SDSURABHI and start playing cricket fantasy for free!
               </CardDescription>
             </CardHeader>
             <CardContent>

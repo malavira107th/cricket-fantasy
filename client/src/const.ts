@@ -1,6 +1,6 @@
 export { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 
-export const APP_TITLE = "Sports IQ Play";
+export const APP_TITLE = "SDSURABHI";
 export const APP_LOGO = "/logo.png";
 export const TAGLINE = "Test Your Cricket IQ";
 export const COMPANY_NAME = "SDSURABHI INFRA PRIVATE LIMITED";

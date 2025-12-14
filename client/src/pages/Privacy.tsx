@@ -12,8 +12,7 @@ export default function Privacy() {
             <Link href="/" className="flex items-center gap-3">
               <img src={APP_LOGO} alt={APP_TITLE} className="h-12 w-auto" />
               <div className="text-xl font-bold hidden sm:block">
-                <span className="text-white">Sports IQ </span>
-                <span className="text-secondary">Play</span>
+                <span className="text-white">SDSURABHI</span>
               </div>
             </Link>
 
@@ -46,7 +45,7 @@ export default function Privacy() {
             <section className="mb-10">
               <h2 className="text-3xl font-bold text-primary mb-4">1. Introduction</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                SDSURABHI INFRA PRIVATE LIMITED (trading as Sports IQ Play) ("we," "us," or "our") is committed to protecting your privacy and personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services (collectively, the "Platform").
+                SDSURABHI INFRA PRIVATE LIMITED (trading as SDSURABHI) ("we," "us," or "our") is committed to protecting your privacy and personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services (collectively, the "Platform").
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 We understand the importance of privacy, especially in the digital age. This policy is designed to help you understand:
@@ -334,7 +333,7 @@ export default function Privacy() {
               </p>
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
                 <p className="text-gray-700 mb-2"><strong>SDSURABHI INFRA PRIVATE LIMITED</strong></p>
-                <p className="text-gray-700 mb-2">Brand Name: Sports IQ Play</p>
+                <p className="text-gray-700 mb-2">Brand Name: SDSURABHI</p>
                 <p className="text-gray-700 mb-2">48/2, Bijnour, Ayodhya Puri 2</p>
                 <p className="text-gray-700 mb-2">Lucknow, Uttar Pradesh 226008, India</p>
                 <p className="text-gray-700 mb-2">CIN: U41002UP2023PTC194590</p>

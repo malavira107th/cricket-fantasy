@@ -132,8 +132,7 @@ export default function Home() {
             <Link href="/" className="flex items-center gap-3">
               <img src={APP_LOGO} alt={APP_TITLE} className="h-12 w-auto" />
               <div className="text-xl font-bold hidden sm:block">
-                <span className="text-white">Sports IQ </span>
-                <span className="text-secondary">Play</span>
+                <span className="text-white">SDSURABHI</span>
               </div>
             </Link>
 
@@ -497,7 +496,7 @@ export default function Home() {
       {/* Why Choose Us */}
       <section className="py-16 bg-white">
         <div className="container">
-          <h2 className="text-4xl font-bold text-primary text-center mb-12">Why Choose Sports IQ Play?</h2>
+          <h2 className="text-4xl font-bold text-primary text-center mb-12">Why Choose SDSURABHI?</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {/* Feature 1 */}
             <Card className="bg-white shadow-md hover:shadow-xl transition-all">
@@ -636,7 +635,7 @@ export default function Home() {
               </div>
               <div className="text-sm text-white/80 space-y-2">
                 <p className="font-semibold text-white">{COMPANY_NAME}</p>
-                <p className="text-white/60 text-xs">Brand Name: Sports IQ Play</p>
+                <p className="text-white/60 text-xs">Brand Name: SDSURABHI</p>
                 <p className="italic text-secondary">{TAGLINE}</p>
                 <p className="mt-3">{COMPANY_ADDRESS}</p>
               </div>
@@ -646,13 +645,13 @@ export default function Home() {
           {/* Operating Company */}
           <div className="border-t border-white/20 pt-6 pb-4">
             <p className="text-sm text-white/70">
-              <span className="font-semibold text-white">Operated by:</span> <a href="https://sdsurabhi.in/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">SDSURABHI INFRA PRIVATE LIMITED</a>
+              <span className="font-semibold text-white">Operated by:</span> SDSURABHI INFRA PRIVATE LIMITED
             </p>
             <p className="text-xs text-white/60 mt-1">
               CIN: U41002UP2023PTC194590 | GST: 09ABMCS3759A1Z4
             </p>
             <p className="text-xs text-white/60 mt-2 italic">
-              Sports IQ Play is fully operated and managed by SDSURABHI INFRA PRIVATE LIMITED
+              SDSURABHI is fully operated and managed by SDSURABHI INFRA PRIVATE LIMITED
             </p>
           </div>
 

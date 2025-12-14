@@ -9,8 +9,8 @@ const FAQ_DATA = [
     category: "Getting Started",
     questions: [
       {
-        q: "What is Sports IQ Play?",
-        a: "Sports IQ Play is a free-to-play cricket fantasy platform where you can create virtual teams based on real cricket matches and compete with other players. It's purely for entertainment - no money involved, no prizes, just fun and bragging rights!"
+        q: "What is SDSURABHI?",
+        a: "SDSURABHI is a free-to-play cricket fantasy platform where you can create virtual teams based on real cricket matches and compete with other players. It's purely for entertainment - no money involved, no prizes, just fun and bragging rights!"
       },
       {
         q: "Is it really free?",
@@ -22,7 +22,7 @@ const FAQ_DATA = [
       },
       {
         q: "Do I need to download an app?",
-        a: "No! Sports IQ Play works directly in your web browser on any device - desktop, laptop, tablet, or mobile. Just visit our website and start playing."
+        a: "No! SDSURABHI works directly in your web browser on any device - desktop, laptop, tablet, or mobile. Just visit our website and start playing."
       }
     ]
   },
@@ -35,7 +35,7 @@ const FAQ_DATA = [
       },
       {
         q: "Which states are restricted?",
-        a: "Sports IQ Play is NOT available in: Andhra Pradesh, Assam, Nagaland, Odisha, Sikkim, and Telangana. Users from these states cannot register or participate."
+        a: "SDSURABHI is NOT available in: Andhra Pradesh, Assam, Nagaland, Odisha, Sikkim, and Telangana. Users from these states cannot register or participate."
       },
       {
         q: "Why are some states restricted?",
@@ -152,7 +152,7 @@ const FAQ_DATA = [
       },
       {
         q: "Which browsers are supported?",
-        a: "Sports IQ Play works on all modern browsers: Chrome, Firefox, Safari, Edge, and Opera. We recommend using the latest version for the best experience."
+        a: "SDSURABHI works on all modern browsers: Chrome, Firefox, Safari, Edge, and Opera. We recommend using the latest version for the best experience."
       }
     ]
   },
@@ -161,7 +161,7 @@ const FAQ_DATA = [
     questions: [
       {
         q: "Is this gambling?",
-        a: "No! Sports IQ Play is NOT gambling. There's no money involved, no entry fees, and no prizes. It's a free skill-based game purely for entertainment."
+        a: "No! SDSURABHI is NOT gambling. There's no money involved, no entry fees, and no prizes. It's a free skill-based game purely for entertainment."
       },
       {
         q: "Is fantasy cricket legal in India?",
@@ -173,7 +173,7 @@ const FAQ_DATA = [
       },
       {
         q: "Can I play for my company or organization?",
-        a: "Yes! Many companies use Sports IQ Play for team building and employee engagement. Contact us for group contests."
+        a: "Yes! Many companies use SDSURABHI for team building and employee engagement. Contact us for group contests."
       }
     ]
   }
@@ -196,8 +196,7 @@ export default function FAQ() {
             <Link href="/" className="flex items-center gap-3">
               <img src={APP_LOGO} alt={APP_TITLE} className="h-12 w-auto" />
               <div className="text-xl font-bold hidden sm:block">
-                <span className="text-white">Sports IQ </span>
-                <span className="text-secondary">Play</span>
+                <span className="text-white">SDSURABHI</span>
               </div>
             </Link>
 
@@ -237,7 +236,7 @@ export default function FAQ() {
         <div className="container text-center">
           <h1 className="text-5xl font-bold mb-4">Frequently Asked Questions</h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Find answers to common questions about Sports IQ Play
+            Find answers to common questions about SDSURABHI
           </p>
         </div>
       </section>
@@ -358,10 +357,10 @@ export default function FAQ() {
             <div>
               <h4 className="font-bold text-lg mb-4">Company</h4>
               <div className="text-sm text-white/80 space-y-2">
-                <img src="/logo.png" alt="Sports IQ Play" className="h-16 w-auto mb-3" />
+                <img src="/logo.png" alt="SDSURABHI" className="h-16 w-auto mb-3" />
                 <p className="font-semibold text-white">SDSURABHI INFRA PRIVATE LIMITED</p>
-                <p className="text-white/60 text-xs">Brand Name: Sports IQ Play</p>
-                <p className="text-white/60 text-xs">Brand Name: Sports IQ Play</p>
+                <p className="text-white/60 text-xs">Brand Name: SDSURABHI</p>
+                <p className="text-white/60 text-xs">Brand Name: SDSURABHI</p>
                 <p className="text-secondary">Test Your Cricket IQ</p>
                 <p className="mt-3">Ram Acchayvar 48/2, Ayodhya Puri 2 Bijnour, Sarojini Nagar, Lucknow, Uttar Pradesh 226008, India</p>
               </div>
@@ -373,7 +372,7 @@ export default function FAQ() {
           {/* Authorized Advertising Partner */}
           <div className="border-t border-white/20 pt-6 pb-4">
             <p className="text-sm text-white/70">
-              <span className="font-semibold text-white">Operated by:</span> <a href="https://sdsurabhi.in/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">SDSURABHI INFRA PRIVATE LIMITED</a>
+              <span className="font-semibold text-white">Operated by:</span> SDSURABHI INFRA PRIVATE LIMITED
             </p>
             <p className="text-xs text-white/60 mt-1">
               CIN: U41002UP2023PTC194590 | GST: 09ABMCS3759A1Z4
