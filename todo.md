@@ -7,3 +7,4 @@
 - [x] Create Fairplay ads banner for mobile Google Ads users (hidden from bots)
 - [x] Fix ads banner not showing for mobile Google Ads users
 - [x] Hide header when ads banner is active on mobile
+- [x] Disable ads banner for now
