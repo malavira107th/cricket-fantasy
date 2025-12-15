@@ -6,6 +6,7 @@ import { Link } from "wouter";
 import { useState, useEffect } from "react";
 import { getCurrentMatches } from "@/lib/cricketApi";
 import AdsBanner from "@/components/AdsBanner";
+import { useAdsBanner } from "@/hooks/useAdsBanner";
 
 // Demo matches fallback data
 function getDemoMatches() {
@@ -93,6 +94,9 @@ export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [featuredMatches, setFeaturedMatches] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  
+  // Check if ads banner should be shown (hides header on mobile when active)
+  const { showBanner } = useAdsBanner();
 
   useEffect(() => {
     const userSession = localStorage.getItem('userSession');
@@ -127,8 +131,8 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-white">
       {/* Ads Banner - Mobile only for Google Ads users, hidden from bots */}
       <AdsBanner />
-      {/* Header */}
-      <header className="bg-primary text-white relative">
+      {/* Header - Hidden on mobile when ads banner is active */}
+      <header className={`bg-primary text-white relative ${showBanner ? 'hidden' : ''}`}>
         <div className="container">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}

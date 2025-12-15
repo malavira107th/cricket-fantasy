@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useAdsBanner } from "@/hooks/useAdsBanner";
 
 /**
  * Ads Banner Component
@@ -8,102 +8,15 @@ import { useState, useEffect } from "react";
  * 3. NOT a bot/crawler
  */
 
-// List of common bot user agents to block
-const BOT_PATTERNS = [
-  'googlebot',
-  'bingbot',
-  'slurp',
-  'duckduckbot',
-  'baiduspider',
-  'yandexbot',
-  'sogou',
-  'exabot',
-  'facebot',
-  'facebookexternalhit',
-  'ia_archiver',
-  'crawler',
-  'spider',
-  'bot',
-  'crawl',
-  'lighthouse',
-  'pagespeed',
-  'headless',
-  'phantom',
-  'selenium',
-  'puppeteer',
-  'playwright'
-];
-
-function isBot(): boolean {
-  const userAgent = navigator.userAgent.toLowerCase();
-  
-  // Check for common bot patterns
-  for (const pattern of BOT_PATTERNS) {
-    if (userAgent.includes(pattern)) {
-      return true;
-    }
-  }
-  
-  // Additional bot detection checks
-  // Check if webdriver is present (common in automation tools)
-  if ((navigator as any).webdriver) {
-    return true;
-  }
-  
-  // Check for headless browser indicators
-  if (!(window as any).chrome && userAgent.includes('chrome')) {
-    return true;
-  }
-  
-  return false;
-}
-
-function isMobileDevice(): boolean {
-  return window.innerWidth < 768;
-}
-
-function isFromGoogleAds(): boolean {
-  const urlParams = new URLSearchParams(window.location.search);
-  const utmSource = urlParams.get("utm_source");
-  const utmMedium = urlParams.get("utm_medium");
-  const utmCampaign = urlParams.get("utm_campaign");
-  
-  return (
-    utmSource === "google" &&
-    utmMedium === "cpc" &&
-    utmCampaign === "23301270924"
-  );
-}
-
 export default function AdsBanner() {
-  const [showBanner, setShowBanner] = useState(false);
-
-  useEffect(() => {
-    // Don't show to bots
-    if (isBot()) {
-      return;
-    }
-    
-    // Only show on mobile
-    if (!isMobileDevice()) {
-      return;
-    }
-    
-    // Only show for Google Ads traffic
-    if (!isFromGoogleAds()) {
-      return;
-    }
-    
-    // All conditions met - show banner
-    setShowBanner(true);
-  }, []);
+  const { showBanner } = useAdsBanner();
 
   if (!showBanner) {
     return null;
   }
 
   return (
-    <section className="w-full bg-gradient-to-b from-purple-900 to-purple-800">
+    <section className="w-full">
       <a 
         href="https://wa.link/fairplusad" 
         target="_blank" 
