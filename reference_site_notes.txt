@@ -1,0 +1,18 @@
+Reference Site: https://www.sportsiqplay.com/
+Date: 2025-12-15
+
+OBSERVATIONS:
+- This is the LIVE published version of the cricket-fantasy project
+- Already shows "SDSURABHI" branding in header with the new logo
+- Title shows "SDSURABHI - Play for Fun"
+- Same design as our development version
+- Hero section: "Play Cricket Fantasy for FREE"
+- Features: Free to Play, Skill Based, No Prizes - Pure Fun
+- Featured Contests section with 4 demo matches
+- Stats: 5,234 Active Players, 12 Live Contests, 1,456 Completed Contests, 100% FREE
+- How to Play section with 3 steps
+- This Week's Top Players leaderboard
+- Why Choose SDSURABHI? section with 6 feature cards
+- CTA: "Ready to Test Your Cricket IQ?"
+
+The live site matches our current development version with SDSURABHI branding.
