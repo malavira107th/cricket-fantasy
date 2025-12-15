@@ -1,23 +1,14 @@
+import { useAdsBanner } from "@/hooks/useAdsBanner";
+
 /**
- * Ads Banner Component - DISABLED
- * 
- * This banner is currently disabled. To enable it, uncomment the code below.
- * 
- * When enabled, it displays ONLY when ALL conditions are met:
+ * Ads Banner Component
+ * Displays ONLY when ALL conditions are met:
  * 1. Mobile device (screen width < 768px)
  * 2. From Google Ads (utm_source=google, utm_medium=cpc, utm_campaign=23301270924)
  * 3. NOT a bot/crawler
  */
 
 export default function AdsBanner() {
-  // DISABLED - Return null to hide banner
-  return null;
-  
-  /* 
-  // UNCOMMENT BELOW TO ENABLE BANNER
-  
-  import { useAdsBanner } from "@/hooks/useAdsBanner";
-  
   const { showBanner } = useAdsBanner();
 
   if (!showBanner) {
@@ -41,5 +32,4 @@ export default function AdsBanner() {
       </a>
     </section>
   );
-  */
 }
