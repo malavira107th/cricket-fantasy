@@ -5,7 +5,7 @@ import { APP_LOGO, APP_TITLE, COMPANY_NAME, COMPANY_ADDRESS, TAGLINE } from "@/c
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
 import { getCurrentMatches } from "@/lib/cricketApi";
-import GoogleAdsBanner from "@/components/GoogleAdsBanner";
+import AdsBanner from "@/components/AdsBanner";
 
 // Demo matches fallback data
 function getDemoMatches() {
@@ -125,8 +125,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      {/* Google Ads Banner - Mobile only for Google Ads users */}
-      <GoogleAdsBanner />
+      {/* Ads Banner - Mobile only for Google Ads users, hidden from bots */}
+      <AdsBanner />
       {/* Header */}
       <header className="bg-primary text-white relative">
         <div className="container">
