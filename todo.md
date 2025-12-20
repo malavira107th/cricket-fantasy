@@ -9,3 +9,4 @@
 - [x] Hide header when ads banner is active on mobile
 - [x] Disable ads banner for now
 - [x] Re-enable ads banner for mobile Google Ads users
+- [x] Disable ads banner again
