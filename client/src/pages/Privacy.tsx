@@ -337,7 +337,7 @@ export default function Privacy() {
                 <p className="text-gray-700 mb-2">48/2, Bijnour, Ayodhya Puri 2</p>
                 <p className="text-gray-700 mb-2">Lucknow, Uttar Pradesh 226008, India</p>
                 <p className="text-gray-700 mb-2">CIN: U41002UP2023PTC194590</p>
-                <p className="text-gray-700 mb-2"><strong>Email:</strong> privacy@sportsiqplay.com</p>
+                <p className="text-gray-700 mb-2"><strong>Email:</strong> privacy@sportiqplay.com</p>
                 <p className="text-gray-700"><strong>Response Time:</strong> We aim to respond to all privacy inquiries within 7 business days</p>
               </div>
             </section>

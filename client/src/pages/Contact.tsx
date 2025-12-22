@@ -182,12 +182,12 @@ export default function Contact() {
                     <div className="text-5xl mb-3">📧</div>
                     <h3 className="text-xl font-bold text-primary mb-2">Email Us</h3>
                     <p className="text-gray-700 text-sm mb-2">General Inquiries:</p>
-                    <a href="mailto:support@sportsiqplay.com" className="text-primary font-semibold hover:underline">
-                      support@sportsiqplay.com
+                    <a href="mailto:support@sportiqplay.com" className="text-primary font-semibold hover:underline">
+                      support@sportiqplay.com
                     </a>
                     <p className="text-gray-700 text-sm mt-3 mb-2">Legal & Privacy:</p>
-                    <a href="mailto:legal@sportsiqplay.com" className="text-primary font-semibold hover:underline">
-                      legal@sportsiqplay.com
+                    <a href="mailto:legal@sportiqplay.com" className="text-primary font-semibold hover:underline">
+                      legal@sportiqplay.com
                     </a>
                   </div>
                 </CardContent>

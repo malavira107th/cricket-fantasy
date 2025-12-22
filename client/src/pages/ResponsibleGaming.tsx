@@ -420,7 +420,7 @@ export default function ResponsibleGaming() {
                   <div className="p-4 bg-blue-50 rounded-lg">
                     <h4 className="font-bold text-primary mb-2">SDSURABHI Support</h4>
                     <p className="text-gray-700 text-sm mb-1">Our support team is here to help</p>
-                    <p className="text-gray-700 text-sm">Email: support@sportsiqplay.com</p>
+                    <p className="text-gray-700 text-sm">Email: support@sportiqplay.com</p>
                     <Link href="/contact" className="text-primary text-sm underline">Contact Us</Link>
                   </div>
                 </div>

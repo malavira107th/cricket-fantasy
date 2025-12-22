@@ -95,10 +95,10 @@ Join thousands playing free cricket fantasy. Build teams, compete, enjoy the gam
 
 ## **Display URL Path Options**
 
-- sportsiqplay.com/free-cricket
-- sportsiqplay.com/join-free
-- sportsiqplay.com/play-now
-- sportsiqplay.com/cricket-fantasy
+- sportiqplay.com/free-cricket
+- sportiqplay.com/join-free
+- sportiqplay.com/play-now
+- sportiqplay.com/cricket-fantasy
 
 ---
 
@@ -144,10 +144,10 @@ Join thousands playing free cricket fantasy. Build teams, compete, enjoy the gam
 ## **Ad Extensions to Add**
 
 ### Sitelink Extensions:
-1. **How to Play** → sportsiqplay.com/how-to-play
-2. **View Contests** → sportsiqplay.com/contests
-3. **Leaderboard** → sportsiqplay.com/leaderboard
-4. **Sign Up Free** → sportsiqplay.com/signup
+1. **How to Play** → sportiqplay.com/how-to-play
+2. **View Contests** → sportiqplay.com/contests
+3. **Leaderboard** → sportiqplay.com/leaderboard
+4. **Sign Up Free** → sportiqplay.com/signup
 
 ### Callout Extensions:
 - 100% Free Forever

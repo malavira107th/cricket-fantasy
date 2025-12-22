@@ -9,8 +9,8 @@ export const APP_TITLE = "SDSURABHI";
 export const APP_LOGO = "/logo.png";
 export const COMPANY_NAME = "SDSURABHI INFRA PRIVATE LIMITED";
 export const COMPANY_ADDRESS = "Ram Acchayvar 48/2, Ayodhya Puri 2 Bijnour, Sarojini Nagar, Lucknow, Uttar Pradesh 226008, India";
-export const DOMAIN = "sportsiqplay.com";
-export const CONTACT_EMAIL = "contact@sportsiqplay.com";
+export const DOMAIN = "sportiqplay.com";
+export const CONTACT_EMAIL = "contact@sportiqplay.com";
 export const TAGLINE = "Test Your Cricket IQ";
 
 // Geo-restricted states

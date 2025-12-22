@@ -151,13 +151,13 @@ Join thousands playing cricket fantasy for fun, not money. Sign up free in 30 se
 ## **Ad Extensions for Competitor Campaigns**
 
 ### Sitelink Extensions:
-1. **Why We're Different** → sportsiqplay.com/about
+1. **Why We're Different** → sportiqplay.com/about
    - "100% free, no money, pure fun"
-2. **See How It Works** → sportsiqplay.com/how-to-play
+2. **See How It Works** → sportiqplay.com/how-to-play
    - "Learn to play in 3 simple steps"
-3. **Join Free Contests** → sportsiqplay.com/contests
+3. **Join Free Contests** → sportiqplay.com/contests
    - "Browse all upcoming matches"
-4. **Sign Up FREE** → sportsiqplay.com/signup
+4. **Sign Up FREE** → sportiqplay.com/signup
    - "Create account in 30 seconds"
 
 ### Callout Extensions:

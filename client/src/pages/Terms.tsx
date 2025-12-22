@@ -342,7 +342,7 @@ export default function Terms() {
                 48/2, Bijnour, Ayodhya Puri 2<br/>
                 Lucknow, Uttar Pradesh 226008, India<br/>
                 CIN: U41002UP2023PTC194590<br/>
-                Email: legal@sportsiqplay.com
+                Email: legal@sportiqplay.com
               </p>
             </section>
 
