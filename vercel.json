@@ -1,24 +1,7 @@
 {
   "buildCommand": "pnpm run build",
   "outputDirectory": "dist/public",
-  "functions": {
-    "api-serverless/**/*.ts": {
-      "runtime": "nodejs20.x"
-    }
-  },
   "rewrites": [
-    {
-      "source": "/api/trpc/:path*",
-      "destination": "/api-serverless/trpc/:path*"
-    },
-    {
-      "source": "/api/auth/github/login",
-      "destination": "/api-serverless/auth/github/login"
-    },
-    {
-      "source": "/api/auth/github/callback",
-      "destination": "/api-serverless/auth/github/callback"
-    },
     {
       "source": "/((?!api).*)",
       "destination": "/index.html"
