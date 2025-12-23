@@ -18,3 +18,8 @@
   - [x] Update package.json scripts
   - [x] Create .env.example file
   - [x] Create migration documentation
+- [ ] Phase 2: Create GitHub repository and push code
+  - [x] Login to GitHub
+  - [x] Create new repository
+  - [ ] Initialize git locally
+  - [ ] Push code to GitHub
