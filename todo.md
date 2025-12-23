@@ -49,10 +49,10 @@
 - [ ] Deploy and verify production deployment
 
 ## Backend Connection & Real Data (Current Phase)
-- [ ] Re-enable tRPC client in main.tsx
-- [ ] Restore real useAuth hook with tRPC
-- [ ] Test serverless API endpoints
-- [ ] Set up GitHub OAuth application
+- [x] Re-enable tRPC client in main.tsx
+- [x] Restore real useAuth hook with tRPC
+- [ ] Test serverless API endpoints - IN PROGRESS
+- [ ] Set up GitHub OAuth application - IN PROGRESS
 - [ ] Configure GitHub OAuth credentials in Vercel
 - [ ] Remove mock data from all pages
 - [ ] Connect frontend to real database via API

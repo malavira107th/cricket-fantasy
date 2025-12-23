@@ -1,15 +1,28 @@
 import { eq, desc, and } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
+import { createPool, Pool } from "mysql2/promise";
 import { InsertUser, users, contests, teams, teamPlayers, userContests, Contest, Team, TeamPlayer, UserContest, InsertContest, InsertTeam, InsertTeamPlayer, InsertUserContest } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
-let _db: ReturnType<typeof drizzle> | null = null;
+let _db: any = null;
+let _pool: Pool | null = null;
 
-// Lazily create the drizzle instance so local tooling can run without a DB.
+// Create connection pool for serverless (reuses connections across invocations)
 export async function getDb() {
   if (!_db && process.env.DATABASE_URL) {
     try {
-      _db = drizzle(process.env.DATABASE_URL);
+      // Create connection pool with serverless-friendly settings
+      if (!_pool) {
+        _pool = createPool({
+          uri: process.env.DATABASE_URL,
+          connectionLimit: 1, // Serverless: use minimal connections
+          maxIdle: 1,
+          idleTimeout: 60000, // 60 seconds
+          enableKeepAlive: true,
+          keepAliveInitialDelay: 0,
+        });
+      }
+      _db = drizzle(_pool);
     } catch (error) {
       console.warn("[Database] Failed to connect:", error);
       _db = null;
