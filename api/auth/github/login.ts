@@ -1,6 +1,10 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  console.log('GitHub OAuth Login - Client ID exists:', !!process.env.GITHUB_CLIENT_ID);
+  console.log('GitHub OAuth Login - Client Secret exists:', !!process.env.GITHUB_CLIENT_SECRET);
+  console.log('All env keys:', Object.keys(process.env).filter(k => k.includes('GITHUB')));
+  
   const clientId = process.env.GITHUB_CLIENT_ID;
   const redirectUri = `${process.env.NEXT_PUBLIC_APP_URL || 'https://cricket-fantasy-delta.vercel.app'}/api/auth/github/callback`;
   
