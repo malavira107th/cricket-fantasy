@@ -1,6 +1,12 @@
 {
   "buildCommand": "pnpm run build",
   "outputDirectory": "dist/public",
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "nodejs22.x",
+      "includeFiles": "api/lib/**"
+    }
+  },
   "rewrites": [
     {
       "source": "/((?!api).*)",
