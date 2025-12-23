@@ -30,3 +30,32 @@
   - [ ] Configure environment variables
   - [ ] Deploy and verify application
   - [ ] Configure custom domain
+
+## Vercel Backend Implementation
+- [ ] Set up Vercel serverless API functions structure
+- [ ] Configure tRPC for serverless environment
+- [ ] Add database connection with MySQL (Railway)
+- [ ] Set up environment variables on Vercel (DATABASE_URL, JWT_SECRET, etc.)
+- [ ] Implement GitHub OAuth authentication
+- [ ] Create OAuth callback handlers
+- [ ] Update frontend auth flow to use GitHub OAuth
+- [ ] Remove all mock data from frontend
+- [ ] Connect frontend to real tRPC API endpoints
+- [ ] Implement real contest data fetching
+- [ ] Implement real user data management
+- [ ] Implement real leaderboard data
+- [ ] Test API endpoints in production
+- [ ] Test authentication flow
+- [ ] Deploy and verify production deployment
+
+## Backend Connection & Real Data (Current Phase)
+- [ ] Re-enable tRPC client in main.tsx
+- [ ] Restore real useAuth hook with tRPC
+- [ ] Test serverless API endpoints
+- [ ] Set up GitHub OAuth application
+- [ ] Configure GitHub OAuth credentials in Vercel
+- [ ] Remove mock data from all pages
+- [ ] Connect frontend to real database via API
+- [ ] Test authentication flow
+- [ ] Verify all features work with real data
+- [ ] Final deployment and testing

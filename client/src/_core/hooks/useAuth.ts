@@ -1,24 +1,11 @@
-import { useMemo } from "react";
+import { trpc } from "@/lib/trpc";
 
-type UseAuthOptions = {
-  redirectOnUnauthenticated?: boolean;
-  redirectPath?: string;
-};
-
-export function useAuth(_options?: UseAuthOptions) {
-  // Static version for Vercel deployment - no authentication
-  const state = useMemo(() => {
-    return {
-      user: null,
-      loading: false,
-      error: null,
-      isAuthenticated: false,
-    };
-  }, []);
+export function useAuth() {
+  const { data: user, isLoading } = trpc.auth.me.useQuery();
 
   return {
-    ...state,
-    refresh: () => Promise.resolve(),
-    logout: () => Promise.resolve(),
+    user: user ?? null,
+    isLoading,
+    isAuthenticated: !!user,
   };
 }
