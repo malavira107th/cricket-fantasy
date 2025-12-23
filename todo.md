@@ -12,3 +12,9 @@
 - [x] Disable ads banner again- [x] Replace email domain from sportsiqplay.com to sportiqplay.com
 - [x] Fix nested <p> tag error on Contact page
 - [x] Add Google Site Verification meta tag
+- [x] Phase 1: Prepare code for Railway migration
+  - [x] Analyze Manus-specific configurations
+  - [x] Create Railway configuration files
+  - [x] Update package.json scripts
+  - [x] Create .env.example file
+  - [x] Create migration documentation
