@@ -4,8 +4,83 @@ import { initTRPC, TRPCError } from '@trpc/server';
 import { eq, desc } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { createPool, Pool } from "mysql2/promise";
-import { users, contests, teams, teamPlayers, userContests } from "../../drizzle/schema";
-import type { InsertUser, Contest, Team, TeamPlayer, UserContest, InsertContest, InsertTeam, InsertTeamPlayer, InsertUserContest } from "../../drizzle/schema";
+import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, boolean } from "drizzle-orm/mysql-core";
+
+// Inline schema definitions for serverless deployment
+const users = mysqlTable("users", {
+  id: int("id").autoincrement().primaryKey(),
+  openId: varchar("openId", { length: 64 }).notNull().unique(),
+  name: text("name"),
+  email: varchar("email", { length: 320 }),
+  loginMethod: varchar("loginMethod", { length: 64 }),
+  role: mysqlEnum("role", ["user", "admin"]).default("user").notNull(),
+  state: varchar("state", { length: 100 }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+  lastSignedIn: timestamp("lastSignedIn").defaultNow().notNull(),
+});
+
+const contests = mysqlTable("contests", {
+  id: int("id").autoincrement().primaryKey(),
+  matchId: varchar("matchId", { length: 100 }).notNull(),
+  matchName: varchar("matchName", { length: 255 }).notNull(),
+  team1: varchar("team1", { length: 100 }).notNull(),
+  team2: varchar("team2", { length: 100 }).notNull(),
+  team1Code: varchar("team1Code", { length: 10 }),
+  team2Code: varchar("team2Code", { length: 10 }),
+  team1Img: text("team1Img"),
+  team2Img: text("team2Img"),
+  matchType: varchar("matchType", { length: 50 }),
+  venue: varchar("venue", { length: 255 }),
+  startTime: timestamp("startTime").notNull(),
+  status: mysqlEnum("status", ["upcoming", "live", "completed", "cancelled"]).default("upcoming").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+const teams = mysqlTable("teams", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  contestId: int("contestId").notNull(),
+  teamName: varchar("teamName", { length: 100 }).notNull(),
+  captainId: varchar("captainId", { length: 100 }).notNull(),
+  viceCaptainId: varchar("viceCaptainId", { length: 100 }).notNull(),
+  totalPoints: int("totalPoints").default(0).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+const teamPlayers = mysqlTable("teamPlayers", {
+  id: int("id").autoincrement().primaryKey(),
+  teamId: int("teamId").notNull(),
+  playerId: varchar("playerId", { length: 100 }).notNull(),
+  playerName: varchar("playerName", { length: 255 }).notNull(),
+  playerRole: varchar("playerRole", { length: 50 }).notNull(),
+  playerTeam: varchar("playerTeam", { length: 100 }).notNull(),
+  points: int("points").default(0).notNull(),
+  isCaptain: boolean("isCaptain").default(false).notNull(),
+  isViceCaptain: boolean("isViceCaptain").default(false).notNull(),
+});
+
+const userContests = mysqlTable("userContests", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  contestId: int("contestId").notNull(),
+  teamId: int("teamId").notNull(),
+  rank: int("rank"),
+  totalPoints: int("totalPoints").default(0).notNull(),
+  joinedAt: timestamp("joinedAt").defaultNow().notNull(),
+});
+
+type InsertUser = typeof users.$inferInsert;
+type Contest = typeof contests.$inferSelect;
+type Team = typeof teams.$inferSelect;
+type TeamPlayer = typeof teamPlayers.$inferSelect;
+type UserContest = typeof userContests.$inferSelect;
+type InsertContest = typeof contests.$inferInsert;
+type InsertTeam = typeof teams.$inferInsert;
+type InsertTeamPlayer = typeof teamPlayers.$inferInsert;
+type InsertUserContest = typeof userContests.$inferInsert;
 import { z } from 'zod';
 import { SignJWT, jwtVerify } from 'jose';
 
