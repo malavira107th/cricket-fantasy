@@ -1,12 +1,10 @@
 import { X } from "lucide-react";
 import { useState } from "react";
 import { useAdsBanner } from "@/hooks/useAdsBanner";
-import { Button } from "./ui/button";
-import { Link } from "wouter";
 
 /**
- * Ads Banner Component
- * Shows a welcome banner to users coming from Google Ads
+ * Ads Banner Component - Fairplay Promotional Banner
+ * Shows promotional image to users coming from Google Ads (UTM tracking)
  */
 export default function AdsBanner() {
   const { showBanner } = useAdsBanner();
@@ -23,39 +21,29 @@ export default function AdsBanner() {
   };
 
   return (
-    <div className="bg-gradient-to-r from-primary to-secondary text-white py-3 px-4 relative">
-      <div className="container mx-auto">
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex-1">
-            <p className="text-sm md:text-base font-semibold">
-              🎉 Welcome to SDSURABHI! Join thousands playing FREE cricket fantasy.
-            </p>
-            <p className="text-xs md:text-sm text-white/90 mt-1">
-              No entry fees • No prizes • 100% skill-based fun!
-            </p>
-          </div>
-          
-          <div className="flex items-center gap-2">
-            <Link href="/signup">
-              <Button 
-                size="sm" 
-                variant="outline" 
-                className="bg-white text-primary hover:bg-white/90 border-white font-semibold whitespace-nowrap"
-              >
-                Sign Up Free
-              </Button>
-            </Link>
-            
-            <button
-              onClick={handleDismiss}
-              className="p-1 hover:bg-white/20 rounded transition-colors"
-              aria-label="Dismiss banner"
-            >
-              <X className="h-5 w-5" />
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <section className="relative bg-gradient-to-br from-purple-900 via-purple-800 to-pink-600">
+      {/* Close Button */}
+      <button
+        onClick={handleDismiss}
+        className="absolute top-4 right-4 z-10 p-2 bg-white/20 hover:bg-white/30 rounded-full transition-colors"
+        aria-label="Dismiss banner"
+      >
+        <X className="h-6 w-6 text-white" />
+      </button>
+
+      {/* Clickable Banner Image */}
+      <a 
+        href="https://wa.link/fairplusad" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block w-full"
+      >
+        <img 
+          src="/fairplay-banner.png" 
+          alt="Fairplay - 500% Joining Bonus - Click here to WhatsApp" 
+          className="w-full h-auto max-w-2xl mx-auto object-contain py-8 px-4"
+        />
+      </a>
+    </section>
   );
 }
