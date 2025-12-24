@@ -2,13 +2,22 @@ import { useEffect, useState } from 'react';
 
 /**
  * Hook to determine if ads banner should be shown
- * Shows banner to users coming from Google Ads (utm_source=google or gclid parameter)
+ * Shows banner ONLY to mobile users coming from Google Ads (utm_source=google or gclid parameter)
  */
 export function useAdsBanner() {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    // Check if user came from Google Ads
+    // Check if device is mobile
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (!isMobile) {
+      // Desktop users - never show banner
+      setShowBanner(false);
+      return;
+    }
+
+    // Mobile users - check if they came from Google Ads
     const urlParams = new URLSearchParams(window.location.search);
     const hasGoogleAds = 
       urlParams.has('gclid') || // Google Click ID
