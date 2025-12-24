@@ -1,0 +1,8 @@
+# robots.txt for sportsiqplay.com
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://www.sportsiqplay.com/sitemap.xml
