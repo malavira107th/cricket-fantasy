@@ -1,7 +1,8 @@
 /**
- * Ads Banner Component - DISABLED
+ * This component has been REMOVED to comply with Google Ads policies.
+ * Showing different content to Google Ads users is considered cloaking.
+ * All users must see identical content regardless of traffic source.
  */
 export default function AdsBanner() {
-  // DISABLED - Return null to hide banner
   return null;
 }
