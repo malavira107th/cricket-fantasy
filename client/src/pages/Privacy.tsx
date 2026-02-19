@@ -109,7 +109,7 @@ export default function Privacy() {
                 To provide real-time cricket match information, we integrate with third-party data providers:
               </p>
               <ul className="list-disc list-inside text-gray-700 mb-4 space-y-2">
-                <li><strong>Cricket Data API (cricketdata.org):</strong> We fetch live cricket match data including team names, scores, match status, venues, and player information</li>
+                <li><strong>Match Data Provider:</strong> We fetch live cricket match data including team information, scores, match status, venues, and player details from third-party sources</li>
                 <li><strong>Data Usage:</strong> This data is displayed on our platform to show current and upcoming matches, contest information, and live scores</li>
                 <li><strong>No Personal Data Shared:</strong> We do not share any of your personal information with these third-party API providers</li>
                 <li><strong>API Provider's Privacy:</strong> The third-party API provider may have their own privacy policies governing the cricket match data they provide</li>

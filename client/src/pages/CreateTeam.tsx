@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { APP_LOGO, APP_TITLE } from "@/const";
 import { Link, useLocation, useParams } from "wouter";
@@ -6,41 +5,42 @@ import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
-// Realistic player data for Indian domestic cricket
+// Generic player data for cricket team selection
+// Note: All player names are generic placeholders for demonstration purposes
 const SAMPLE_PLAYERS = [
   // Wicketkeepers
-  { id: 1, name: "Rishabh Pant", role: "WK", team: "Delhi", credits: 10, points: 245 },
-  { id: 2, name: "KS Bharat", role: "WK", team: "Andhra", credits: 8.5, points: 198 },
-  { id: 3, name: "Ishan Kishan", role: "WK", team: "Jharkhand", credits: 9.5, points: 220 },
-  { id: 4, name: "Sanju Samson", role: "WK", team: "Kerala", credits: 9, points: 210 },
+  { id: 1, name: "Wicketkeeper A", role: "WK", team: "Team A", credits: 10, points: 245 },
+  { id: 2, name: "Wicketkeeper B", role: "WK", team: "Team B", credits: 8.5, points: 198 },
+  { id: 3, name: "Wicketkeeper C", role: "WK", team: "Team C", credits: 9.5, points: 220 },
+  { id: 4, name: "Wicketkeeper D", role: "WK", team: "Team D", credits: 9, points: 210 },
   
   // Batsmen
-  { id: 5, name: "Virat Kohli", role: "BAT", team: "Delhi", credits: 11, points: 312 },
-  { id: 6, name: "Rohit Sharma", role: "BAT", team: "Mumbai", credits: 10.5, points: 298 },
-  { id: 7, name: "Shubman Gill", role: "BAT", team: "Punjab", credits: 10, points: 275 },
-  { id: 8, name: "Shreyas Iyer", role: "BAT", team: "Mumbai", credits: 9.5, points: 256 },
-  { id: 9, name: "KL Rahul", role: "BAT", team: "Karnataka", credits: 9.5, points: 248 },
-  { id: 10, name: "Prithvi Shaw", role: "BAT", team: "Mumbai", credits: 8.5, points: 210 },
-  { id: 11, name: "Ruturaj Gaikwad", role: "BAT", team: "Maharashtra", credits: 9, points: 235 },
-  { id: 12, name: "Devdutt Padikkal", role: "BAT", team: "Karnataka", credits: 8, points: 195 },
+  { id: 5, name: "Batsman A", role: "BAT", team: "Team A", credits: 11, points: 312 },
+  { id: 6, name: "Batsman B", role: "BAT", team: "Team B", credits: 10.5, points: 298 },
+  { id: 7, name: "Batsman C", role: "BAT", team: "Team C", credits: 10, points: 275 },
+  { id: 8, name: "Batsman D", role: "BAT", team: "Team B", credits: 9.5, points: 256 },
+  { id: 9, name: "Batsman E", role: "BAT", team: "Team E", credits: 9.5, points: 248 },
+  { id: 10, name: "Batsman F", role: "BAT", team: "Team B", credits: 8.5, points: 210 },
+  { id: 11, name: "Batsman G", role: "BAT", team: "Team F", credits: 9, points: 235 },
+  { id: 12, name: "Batsman H", role: "BAT", team: "Team E", credits: 8, points: 195 },
   
   // All-rounders
-  { id: 13, name: "Hardik Pandya", role: "AR", team: "Baroda", credits: 10.5, points: 285 },
-  { id: 14, name: "Ravindra Jadeja", role: "AR", team: "Saurashtra", credits: 10, points: 270 },
-  { id: 15, name: "Axar Patel", role: "AR", team: "Gujarat", credits: 9, points: 240 },
-  { id: 16, name: "Washington Sundar", role: "AR", team: "Tamil Nadu", credits: 8.5, points: 225 },
-  { id: 17, name: "Krunal Pandya", role: "AR", team: "Baroda", credits: 8, points: 205 },
-  { id: 18, name: "Vijay Shankar", role: "AR", team: "Tamil Nadu", credits: 7.5, points: 180 },
+  { id: 13, name: "All-rounder A", role: "AR", team: "Team G", credits: 10.5, points: 285 },
+  { id: 14, name: "All-rounder B", role: "AR", team: "Team H", credits: 10, points: 270 },
+  { id: 15, name: "All-rounder C", role: "AR", team: "Team I", credits: 9, points: 240 },
+  { id: 16, name: "All-rounder D", role: "AR", team: "Team J", credits: 8.5, points: 225 },
+  { id: 17, name: "All-rounder E", role: "AR", team: "Team G", credits: 8, points: 205 },
+  { id: 18, name: "All-rounder F", role: "AR", team: "Team J", credits: 7.5, points: 180 },
   
   // Bowlers
-  { id: 19, name: "Jasprit Bumrah", role: "BOW", team: "Gujarat", credits: 11, points: 295 },
-  { id: 20, name: "Mohammed Shami", role: "BOW", team: "Bengal", credits: 10, points: 275 },
-  { id: 21, name: "Yuzvendra Chahal", role: "BOW", team: "Haryana", credits: 9.5, points: 260 },
-  { id: 22, name: "Kuldeep Yadav", role: "BOW", team: "Uttar Pradesh", credits: 9, points: 245 },
-  { id: 23, name: "Mohammed Siraj", role: "BOW", team: "Hyderabad", credits: 9, points: 240 },
-  { id: 24, name: "Shardul Thakur", role: "BOW", team: "Mumbai", credits: 8.5, points: 220 },
-  { id: 25, name: "Arshdeep Singh", role: "BOW", team: "Punjab", credits: 8, points: 205 },
-  { id: 26, name: "Umran Malik", role: "BOW", team: "Jammu and Kashmir", credits: 7.5, points: 185 },
+  { id: 19, name: "Bowler A", role: "BOW", team: "Team I", credits: 11, points: 295 },
+  { id: 20, name: "Bowler B", role: "BOW", team: "Team K", credits: 10, points: 275 },
+  { id: 21, name: "Bowler C", role: "BOW", team: "Team L", credits: 9.5, points: 260 },
+  { id: 22, name: "Bowler D", role: "BOW", team: "Team M", credits: 9, points: 245 },
+  { id: 23, name: "Bowler E", role: "BOW", team: "Team N", credits: 9, points: 240 },
+  { id: 24, name: "Bowler F", role: "BOW", team: "Team B", credits: 8.5, points: 220 },
+  { id: 25, name: "Bowler G", role: "BOW", team: "Team C", credits: 8, points: 205 },
+  { id: 26, name: "Bowler H", role: "BOW", team: "Team O", credits: 7.5, points: 185 },
 ];
 
 interface Player {
@@ -98,78 +98,73 @@ export default function CreateTeam() {
     return true;
   };
 
-  const handlePlayerToggle = (player: Player) => {
-    const isSelected = selectedPlayers.some(p => p.id === player.id);
-    
-    if (isSelected) {
-      setSelectedPlayers(selectedPlayers.filter(p => p.id !== player.id));
-      if (captain === player.id) setCaptain(null);
-      if (viceCaptain === player.id) setViceCaptain(null);
-    } else {
-      if (canAddPlayer(player)) {
-        setSelectedPlayers([...selectedPlayers, player]);
-      } else {
-        toast.error("Cannot add this player. Check credits or role limits.");
-      }
+  const handleAddPlayer = (player: Player) => {
+    if (!canAddPlayer(player)) {
+      toast.error("Cannot add this player. Check role limits and available credits.");
+      return;
     }
+    setSelectedPlayers([...selectedPlayers, player]);
+    toast.success(`${player.name} added to your team`);
   };
 
-  const handleSaveTeam = () => {
+  const handleRemovePlayer = (playerId: number) => {
+    setSelectedPlayers(selectedPlayers.filter(p => p.id !== playerId));
+    if (captain === playerId) setCaptain(null);
+    if (viceCaptain === playerId) setViceCaptain(null);
+    toast.success("Player removed from team");
+  };
+
+  const handleSetCaptain = (playerId: number) => {
+    if (viceCaptain === playerId) {
+      setViceCaptain(null);
+    }
+    setCaptain(playerId);
+  };
+
+  const handleSetViceCaptain = (playerId: number) => {
+    if (captain === playerId) {
+      setCaptain(null);
+    }
+    setViceCaptain(playerId);
+  };
+
+  const handleSubmitTeam = () => {
     if (selectedPlayers.length !== 11) {
       toast.error("Please select exactly 11 players");
       return;
     }
-    
-    if (roleCount.WK < 1) {
-      toast.error("Select at least 1 Wicketkeeper");
-      return;
-    }
-    if (roleCount.BAT < 3) {
-      toast.error("Select at least 3 Batsmen");
-      return;
-    }
-    if (roleCount.AR < 1) {
-      toast.error("Select at least 1 All-rounder");
-      return;
-    }
-    if (roleCount.BOW < 3) {
-      toast.error("Select at least 3 Bowlers");
-      return;
-    }
-    
     if (!captain) {
-      toast.error("Please select a Captain");
+      toast.error("Please select a captain");
       return;
     }
     if (!viceCaptain) {
-      toast.error("Please select a Vice-Captain");
+      toast.error("Please select a vice-captain");
       return;
     }
     
-    // Save team to localStorage
-    const team = {
+    // Save team and proceed
+    const teamData = {
       contestId,
       players: selectedPlayers,
       captain,
       viceCaptain,
-      createdAt: new Date().toISOString()
+      credits: creditsUsed
     };
     
-    const existingTeams = JSON.parse(localStorage.getItem('myTeams') || '[]');
-    existingTeams.push(team);
-    localStorage.setItem('myTeams', JSON.stringify(existingTeams));
-    
-    toast.success("Team saved successfully!");
-    setLocation('/my-teams');
+    localStorage.setItem('currentTeam', JSON.stringify(teamData));
+    toast.success("Team submitted successfully!");
+    setLocation(`/contest/${contestId}/preview`);
   };
 
   const filteredPlayers = filter === "ALL" 
     ? SAMPLE_PLAYERS 
     : SAMPLE_PLAYERS.filter(p => p.role === filter);
 
-  if (!isLoggedIn) {
-    return null;
-  }
+  const availablePlayers = filteredPlayers.filter(
+    p => !selectedPlayers.find(sp => sp.id === p.id)
+  );
+
+  if (!isLoggedIn) return null;
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -183,198 +178,144 @@ export default function CreateTeam() {
                 <span className="text-white">SDSURABHI</span>
               </div>
             </Link>
-
-            <div className="flex items-center gap-3">
-              <Link href="/dashboard">
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary bg-transparent">
-                  Dashboard
-                </Button>
-              </Link>
-            </div>
+            <Link href="/contests">
+              <button className="text-white hover:text-secondary transition-colors">
+                ← Back to Contests
+              </button>
+            </Link>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="py-8">
-        <div className="container max-w-7xl">
-          {/* Back Button */}
-          <Link href={`/contest/${contestId}`}>
-            <Button variant="outline" className="mb-6">
-              ← Back to Contest
-            </Button>
-          </Link>
+      <main className="flex-1 py-8">
+        <div className="container">
+          <h1 className="text-4xl font-bold text-primary mb-8">Choose Your XI</h1>
 
-          <div className="grid lg:grid-cols-4 gap-6">
-            {/* Player List */}
-            <div className="lg:col-span-3">
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Available Players */}
+            <div className="lg:col-span-2">
               <Card className="bg-white shadow-lg">
-                <CardHeader className="bg-gradient-to-r from-primary to-primary/80 text-white">
-                  <CardTitle className="text-2xl">Select Your Team</CardTitle>
-                  <p className="text-sm text-white/80 mt-1">Pick 11 players within 100 credits</p>
-                </CardHeader>
-                <CardContent className="p-6">
-                  {/* Filter Tabs */}
-                  <div className="flex gap-2 mb-6 flex-wrap">
+                <CardHeader>
+                  <CardTitle>Available Players</CardTitle>
+                  <div className="flex gap-2 mt-4">
                     {['ALL', 'WK', 'BAT', 'AR', 'BOW'].map(role => (
-                      <Button
+                      <button
                         key={role}
                         onClick={() => setFilter(role)}
-                        variant={filter === role ? "default" : "outline"}
-                        className={filter === role ? "bg-primary" : ""}
+                        className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+                          filter === role
+                            ? 'bg-primary text-white'
+                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                        }`}
                       >
-                        {role === 'ALL' ? 'All Players' : role}
-                      </Button>
+                        {role}
+                      </button>
                     ))}
                   </div>
-
-                  {/* Players Grid */}
-                  <div className="space-y-2">
-                    {filteredPlayers.map(player => {
-                      const isSelected = selectedPlayers.some(p => p.id === player.id);
-                      const isCaptain = captain === player.id;
-                      const isViceCaptain = viceCaptain === player.id;
-                      
-                      return (
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2 max-h-96 overflow-y-auto">
+                    {availablePlayers.length > 0 ? (
+                      availablePlayers.map(player => (
                         <div
                           key={player.id}
-                          className={`border rounded-lg p-4 flex items-center justify-between transition-all ${
-                            isSelected ? 'border-primary bg-blue-50' : 'border-gray-200 hover:border-gray-300'
-                          }`}
+                          className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                         >
-                          <div className="flex items-center gap-4 flex-1">
-                            <input
-                              type="checkbox"
-                              checked={isSelected}
-                              onChange={() => handlePlayerToggle(player)}
-                              className="w-5 h-5"
-                            />
-                            <div className="flex-1">
-                              <div className="flex items-center gap-2">
-                                <h4 className="font-semibold text-gray-900">{player.name}</h4>
-                                {isCaptain && <span className="bg-yellow-500 text-white text-xs px-2 py-1 rounded">C</span>}
-                                {isViceCaptain && <span className="bg-gray-600 text-white text-xs px-2 py-1 rounded">VC</span>}
-                              </div>
-                              <p className="text-sm text-gray-600">{player.team} • {player.role}</p>
-                            </div>
+                          <div>
+                            <p className="font-semibold text-gray-900">{player.name}</p>
+                            <p className="text-sm text-gray-600">
+                              {player.role} • {player.team} • {player.credits} credits
+                            </p>
                           </div>
-                          <div className="flex items-center gap-4">
-                            <div className="text-right">
-                              <p className="text-sm font-semibold text-primary">{player.credits} CR</p>
-                              <p className="text-xs text-gray-500">{player.points} pts</p>
-                            </div>
-                            {isSelected && (
-                              <div className="flex gap-2">
-                                <Button
-                                  size="sm"
-                                  variant={isCaptain ? "default" : "outline"}
-                                  onClick={() => setCaptain(player.id)}
-                                  className="text-xs"
-                                >
-                                  C
-                                </Button>
-                                <Button
-                                  size="sm"
-                                  variant={isViceCaptain ? "default" : "outline"}
-                                  onClick={() => setViceCaptain(player.id)}
-                                  className="text-xs"
-                                >
-                                  VC
-                                </Button>
-                              </div>
-                            )}
-                          </div>
+                          <button
+                            onClick={() => handleAddPlayer(player)}
+                            disabled={!canAddPlayer(player)}
+                            className="px-3 py-1 bg-primary text-white rounded-lg hover:bg-primary/90 disabled:bg-gray-300 transition-colors"
+                          >
+                            Add
+                          </button>
                         </div>
-                      );
-                    })}
+                      ))
+                    ) : (
+                      <p className="text-center text-gray-500 py-8">
+                        No players available for this role
+                      </p>
+                    )}
                   </div>
                 </CardContent>
               </Card>
             </div>
 
-            {/* Team Summary Sidebar */}
-            <div className="space-y-6">
-              {/* Credits Card */}
-              <Card className="bg-white shadow-lg sticky top-6">
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-lg mb-4">Team Summary</h3>
-                  
-                  <div className="space-y-4">
-                    <div>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-600">Credits Left</span>
-                        <span className={`font-bold ${creditsLeft < 0 ? 'text-red-600' : 'text-green-600'}`}>
-                          {creditsLeft.toFixed(1)}
-                        </span>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div 
-                          className={`h-2 rounded-full ${creditsLeft < 0 ? 'bg-red-600' : 'bg-green-600'}`}
-                          style={{ width: `${Math.min(100, (creditsUsed / 100) * 100)}%` }}
-                        ></div>
-                      </div>
-                    </div>
-
-                    <div className="border-t pt-4">
-                      <p className="text-sm text-gray-600 mb-2">Players Selected</p>
-                      <p className="text-2xl font-bold text-primary">{selectedPlayers.length}/11</p>
-                    </div>
-
-                    <div className="border-t pt-4 space-y-2">
-                      <div className="flex justify-between text-sm">
-                        <span>WK</span>
-                        <span className="font-semibold">{roleCount.WK}/1</span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span>BAT</span>
-                        <span className="font-semibold">{roleCount.BAT}/3-6</span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span>AR</span>
-                        <span className="font-semibold">{roleCount.AR}/1-3</span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span>BOW</span>
-                        <span className="font-semibold">{roleCount.BOW}/3-6</span>
-                      </div>
-                    </div>
-
-                    <div className="border-t pt-4 space-y-2">
-                      <div className="flex justify-between text-sm">
-                        <span>Captain</span>
-                        <span className="font-semibold">{captain ? '✓' : '✗'}</span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span>Vice-Captain</span>
-                        <span className="font-semibold">{viceCaptain ? '✓' : '✗'}</span>
-                      </div>
-                    </div>
-
-                    <Button 
-                      onClick={handleSaveTeam}
-                      className="w-full bg-secondary hover:bg-secondary/90 text-black font-bold py-6 h-auto mt-6"
-                      disabled={selectedPlayers.length !== 11 || !captain || !viceCaptain}
-                    >
-                      Save Team
-                    </Button>
+            {/* Selected Team Summary */}
+            <div>
+              <Card className="bg-white shadow-lg sticky top-8">
+                <CardHeader>
+                  <CardTitle>Your XI</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  {/* Credits */}
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <p className="text-sm text-gray-600">Credits Used</p>
+                    <p className="text-2xl font-bold text-primary">{creditsUsed}/100</p>
+                    <p className="text-sm text-gray-600">Remaining: {creditsLeft}</p>
                   </div>
-                </CardContent>
-              </Card>
 
-              {/* Rules Card */}
-              <Card className="bg-gradient-to-br from-primary to-primary/80 text-white shadow-lg">
-                <CardContent className="p-6">
-                  <h4 className="font-bold text-lg mb-4">Team Rules</h4>
-                  <ul className="space-y-2 text-sm text-white/90">
-                    <li>• Select exactly 11 players</li>
-                    <li>• 1 Wicketkeeper required</li>
-                    <li>• 3-6 Batsmen</li>
-                    <li>• 1-3 All-rounders</li>
-                    <li>• 3-6 Bowlers</li>
-                    <li>• Max 100 credits</li>
-                    <li>• Choose Captain (2x pts)</li>
-                    <li>• Choose VC (1.5x pts)</li>
-                  </ul>
+                  {/* Selected Players */}
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-2">
+                      Players: {selectedPlayers.length}/11
+                    </h3>
+                    <div className="space-y-2 max-h-48 overflow-y-auto">
+                      {selectedPlayers.map(player => (
+                        <div
+                          key={player.id}
+                          className="p-2 bg-gray-50 rounded-lg text-sm"
+                        >
+                          <div className="flex items-center justify-between">
+                            <span className="font-semibold">{player.name}</span>
+                            <button
+                              onClick={() => handleRemovePlayer(player.id)}
+                              className="text-red-600 hover:text-red-800 font-semibold"
+                            >
+                              ✕
+                            </button>
+                          </div>
+                          <div className="flex gap-2 mt-1">
+                            <button
+                              onClick={() => handleSetCaptain(player.id)}
+                              className={`text-xs px-2 py-1 rounded ${
+                                captain === player.id
+                                  ? 'bg-yellow-500 text-white'
+                                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                              }`}
+                            >
+                              C
+                            </button>
+                            <button
+                              onClick={() => handleSetViceCaptain(player.id)}
+                              className={`text-xs px-2 py-1 rounded ${
+                                viceCaptain === player.id
+                                  ? 'bg-orange-500 text-white'
+                                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                              }`}
+                            >
+                              VC
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Submit Button */}
+                  <button
+                    onClick={handleSubmitTeam}
+                    disabled={selectedPlayers.length !== 11 || !captain || !viceCaptain}
+                    className="w-full py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 disabled:bg-gray-300 transition-colors"
+                  >
+                    Submit Team
+                  </button>
                 </CardContent>
               </Card>
             </div>

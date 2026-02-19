@@ -1,8 +1,8 @@
-// Cricket Data API Service
-// API Documentation: https://cricketdata.org/
+// Cricket Match Data Service
+// Note: API key is now handled securely on the backend
+// Frontend communicates with backend endpoint instead of external API
 
-const API_KEY = 'd6ad9cdb-9b53-4b26-923a-040a2d349d61';
-const BASE_URL = 'https://api.cricapi.com/v1';
+const BACKEND_API_URL = '/api/cricket';
 
 export interface Match {
   id: string;
@@ -31,7 +31,7 @@ export interface Match {
     inning: string;
   }>;
   series_id: string;
-  fantasyEnabled: boolean;
+  enabled: boolean;
   matchStarted?: boolean;
   matchEnded?: boolean;
 }
@@ -39,22 +39,22 @@ export interface Match {
 export interface ApiResponse<T> {
   data: T;
   status: string;
-  info: {
-    hitsToday: number;
-    hitsUsed: number;
-    hitsLimit: number;
-    credits: number;
-    server: number;
-    offsetRows: number;
-    totalRows: number;
-    queryTime: number;
+  info?: {
+    hitsToday?: number;
+    hitsUsed?: number;
+    hitsLimit?: number;
+    credits?: number;
+    server?: number;
+    offsetRows?: number;
+    totalRows?: number;
+    queryTime?: number;
   };
 }
 
 // Fetch current/live matches
 export async function getCurrentMatches(): Promise<Match[]> {
   try {
-    const response = await fetch(`${BASE_URL}/currentMatches?apikey=${API_KEY}&offset=0`);
+    const response = await fetch(`${BACKEND_API_URL}/current-matches`);
     const data: ApiResponse<Match[]> = await response.json();
     
     if (data.status === 'success') {
@@ -70,7 +70,7 @@ export async function getCurrentMatches(): Promise<Match[]> {
 // Fetch all matches
 export async function getAllMatches(): Promise<Match[]> {
   try {
-    const response = await fetch(`${BASE_URL}/matches?apikey=${API_KEY}&offset=0`);
+    const response = await fetch(`${BACKEND_API_URL}/all-matches`);
     const data: ApiResponse<Match[]> = await response.json();
     
     if (data.status === 'success') {
@@ -86,7 +86,7 @@ export async function getAllMatches(): Promise<Match[]> {
 // Fetch match details by ID
 export async function getMatchInfo(matchId: string): Promise<Match | null> {
   try {
-    const response = await fetch(`${BASE_URL}/match_info?apikey=${API_KEY}&id=${matchId}`);
+    const response = await fetch(`${BACKEND_API_URL}/match-info/${matchId}`);
     const data: ApiResponse<Match> = await response.json();
     
     if (data.status === 'success') {
@@ -123,31 +123,21 @@ export function getTimeUntilMatch(dateTimeGMT: string): string {
 // Get team color based on team name
 export function getTeamColor(teamName: string): string {
   const colorMap: { [key: string]: string } = {
-    'India': 'bg-orange-500',
-    'Australia': 'bg-yellow-500',
-    'England': 'bg-red-600',
-    'Pakistan': 'bg-green-700',
-    'South Africa': 'bg-green-600',
-    'New Zealand': 'bg-black',
-    'West Indies': 'bg-blue-700',
-    'Sri Lanka': 'bg-yellow-600',
-    'Bangladesh': 'bg-green-600',
-    'Afghanistan': 'bg-blue-800',
-    // Indian domestic teams
-    'Mumbai': 'bg-blue-600',
-    'Delhi': 'bg-red-500',
-    'Karnataka': 'bg-red-700',
-    'Tamil Nadu': 'bg-yellow-600',
-    'Maharashtra': 'bg-orange-600',
-    'Gujarat': 'bg-blue-500',
-    'Rajasthan': 'bg-pink-600',
-    'Punjab': 'bg-red-600',
-    'Haryana': 'bg-blue-700',
-    'Kerala': 'bg-green-700',
-    'Bengal': 'bg-purple-600',
-    'Hyderabad': 'bg-orange-500',
-    'Uttar Pradesh': 'bg-blue-600',
-    'Madhya Pradesh': 'bg-orange-700',
+    'Team A': 'bg-blue-500',
+    'Team B': 'bg-red-500',
+    'Team C': 'bg-green-500',
+    'Team D': 'bg-yellow-500',
+    'Team E': 'bg-purple-500',
+    'Team F': 'bg-pink-500',
+    'Team G': 'bg-indigo-500',
+    'Team H': 'bg-cyan-500',
+    'Team I': 'bg-orange-500',
+    'Team J': 'bg-teal-500',
+    'Team K': 'bg-violet-500',
+    'Team L': 'bg-rose-500',
+    'Team M': 'bg-amber-500',
+    'Team N': 'bg-lime-500',
+    'Team O': 'bg-sky-500',
   };
 
   // Check if team name contains any of the keys
@@ -222,7 +212,7 @@ export interface PlayerPerformance {
 // Fetch live match score
 export async function getLiveScore(matchId: string): Promise<LiveScore | null> {
   try {
-    const response = await fetch(`${BASE_URL}/match_info?apikey=${API_KEY}&id=${matchId}`);
+    const response = await fetch(`${BACKEND_API_URL}/live-score/${matchId}`);
     const data: ApiResponse<Match> = await response.json();
     
     if (data.status === 'success' && data.data) {
@@ -241,7 +231,7 @@ export async function getLiveScore(matchId: string): Promise<LiveScore | null> {
   }
 }
 
-// Calculate fantasy points for a player
+// Calculate points for a player based on performance
 export function calculatePlayerPoints(player: PlayerPerformance): number {
   let points = 0;
 

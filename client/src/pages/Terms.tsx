@@ -119,7 +119,7 @@ export default function Terms() {
                 The Platform integrates with third-party data providers to display real-time cricket match information:
               </p>
               <ul className="list-disc list-inside text-gray-700 mb-4 space-y-2">
-                <li><strong>Cricket Data API:</strong> We use Cricket Data API (cricketdata.org) to fetch live match data, including team information, scores, match status, venues, and player details</li>
+                <li><strong>Match Data Provider:</strong> We source live cricket match data from third-party data providers to deliver match information, scores, status, venues, and player details</li>
                 <li><strong>Data Accuracy:</strong> While we strive to provide accurate and timely information, the accuracy, completeness, and timeliness of match data depend entirely on the third-party API provider</li>
                 <li><strong>Service Availability:</strong> The availability of match data and live scores is subject to the third-party API provider's service uptime and may be interrupted or delayed</li>
                 <li><strong>No Warranty:</strong> We do not warrant or guarantee the accuracy, reliability, or availability of any data provided by third-party sources</li>
@@ -245,8 +245,7 @@ export default function Terms() {
 
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">7.4 Third-Party Data Disclaimer</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                The Platform relies on third-party API providers (including but not limited to Cricket Data API from cricketdata.org) for cricket match data, scores, and related information. We explicitly disclaim all liability for:
-              </p>
+                The Platform relies on third-party data providers for cricket match data, scores, and related information. We explicitly disclaim all liability for:              </p>
               <ul className="list-disc list-inside text-gray-700 mb-4 space-y-2">
                 <li>Accuracy, completeness, or timeliness of match data provided by third-party sources</li>
                 <li>Delays, interruptions, or unavailability of third-party API services</li>

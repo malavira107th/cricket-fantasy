@@ -5,24 +5,23 @@ import { APP_LOGO, APP_TITLE, COMPANY_NAME, COMPANY_ADDRESS, TAGLINE } from "@/c
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
 import { getCurrentMatches } from "@/lib/cricketApi";
-import AdsBanner from "@/components/AdsBanner";
-import { useAdsBanner } from "@/hooks/useAdsBanner";
+
 
 // Demo matches fallback data
 function getDemoMatches() {
   return [
     {
       id: 'demo-1',
-      name: 'India vs Australia - 3rd T20',
+      name: 'Match 1 - T20 Format',
       matchType: 'T20',
       status: 'Starts in 2h 30m',
-      venue: 'M. Chinnaswamy Stadium, Bengaluru',
+      venue: 'Cricket Ground A',
       date: new Date(Date.now() + 2.5 * 60 * 60 * 1000).toISOString(),
       dateTimeGMT: new Date(Date.now() + 2.5 * 60 * 60 * 1000).toISOString(),
-      teams: ['India', 'Australia'],
+      teams: ['Team A', 'Team B'],
       teamInfo: [
-        { name: 'India', shortname: 'IND', img: '' },
-        { name: 'Australia', shortname: 'AUS', img: '' }
+        { name: 'Team A', shortname: 'TA', img: '' },
+        { name: 'Team B', shortname: 'TB', img: '' }
       ],
       series_id: 'demo-series-1',
       enabled: true,
@@ -31,16 +30,16 @@ function getDemoMatches() {
     },
     {
       id: 'demo-2',
-      name: 'England vs Pakistan - 2nd ODI',
+      name: 'Match 2 - ODI Format',
       matchType: 'ODI',
       status: 'Starts in 5h 15m',
-      venue: 'Lord\'s, London',
+      venue: 'Cricket Ground B',
       date: new Date(Date.now() + 5.25 * 60 * 60 * 1000).toISOString(),
       dateTimeGMT: new Date(Date.now() + 5.25 * 60 * 60 * 1000).toISOString(),
-      teams: ['England', 'Pakistan'],
+      teams: ['Team C', 'Team D'],
       teamInfo: [
-        { name: 'England', shortname: 'ENG', img: '' },
-        { name: 'Pakistan', shortname: 'PAK', img: '' }
+        { name: 'Team C', shortname: 'TC', img: '' },
+        { name: 'Team D', shortname: 'TD', img: '' }
       ],
       series_id: 'demo-series-2',
       enabled: true,
@@ -49,16 +48,16 @@ function getDemoMatches() {
     },
     {
       id: 'demo-3',
-      name: 'Mumbai vs Delhi - IPL 2024',
+      name: 'Match 3 - T20 League',
       matchType: 'T20',
       status: 'Starts in 8h 45m',
-      venue: 'Wankhede Stadium, Mumbai',
+      venue: 'Cricket Ground C',
       date: new Date(Date.now() + 8.75 * 60 * 60 * 1000).toISOString(),
       dateTimeGMT: new Date(Date.now() + 8.75 * 60 * 60 * 1000).toISOString(),
-      teams: ['Mumbai Indians', 'Delhi Capitals'],
+      teams: ['Team E', 'Team F'],
       teamInfo: [
-        { name: 'Mumbai Indians', shortname: 'MI', img: '' },
-        { name: 'Delhi Capitals', shortname: 'DC', img: '' }
+        { name: 'Team E', shortname: 'TE', img: '' },
+        { name: 'Team F', shortname: 'TF', img: '' }
       ],
       series_id: 'demo-series-3',
       enabled: true,
@@ -67,16 +66,16 @@ function getDemoMatches() {
     },
     {
       id: 'demo-4',
-      name: 'South Africa vs New Zealand - Test Match',
+      name: 'Match 4 - Test Format',
       matchType: 'Test',
       status: 'Starts in 12h',
-      venue: 'Newlands, Cape Town',
+      venue: 'Cricket Ground D',
       date: new Date(Date.now() + 12 * 60 * 60 * 1000).toISOString(),
       dateTimeGMT: new Date(Date.now() + 12 * 60 * 60 * 1000).toISOString(),
-      teams: ['South Africa', 'New Zealand'],
+      teams: ['Team G', 'Team H'],
       teamInfo: [
-        { name: 'South Africa', shortname: 'RSA', img: '' },
-        { name: 'New Zealand', shortname: 'NZ', img: '' }
+        { name: 'Team G', shortname: 'TG', img: '' },
+        { name: 'Team H', shortname: 'TH', img: '' }
       ],
       series_id: 'demo-series-4',
       enabled: true,
@@ -95,8 +94,7 @@ export default function Home() {
   const [featuredMatches, setFeaturedMatches] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   
-  // Check if ads banner should be shown (hides header on mobile when active)
-  const { showBanner } = useAdsBanner();
+
 
   useEffect(() => {
     const userSession = localStorage.getItem('userSession');
@@ -129,10 +127,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      {/* Ads Banner - Mobile only for Google Ads users, hidden from bots */}
-      <AdsBanner />
-      {/* Header - Hidden on mobile when ads banner is active */}
-      <header className={`bg-primary text-white relative ${showBanner ? 'hidden' : ''}`}>
+      {/* Header */}
+      <header className="bg-primary text-white relative">
         <div className="container">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
