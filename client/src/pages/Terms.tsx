@@ -64,9 +64,9 @@ export default function Terms() {
                 You must be at least 18 years of age to register and use the Platform. By registering, you represent and warrant that you are 18 years or older. We reserve the right to request proof of age at any time, and failure to provide such proof may result in account suspension or termination.
               </p>
 
-              <h3 className="text-2xl font-semibold text-gray-900 mb-3">2.2 Geographic Restrictions</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-3">2.2 Geographic Availability</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                The Platform is NOT available to residents of the following Indian states: <strong>Andhra Pradesh, Assam, Nagaland, Odisha, Sikkim, and Telangana</strong>. By registering, you confirm that you are not a resident of any of these restricted states. We reserve the right to verify your location and may suspend or terminate accounts found to be in violation of this restriction.
+                The Platform is available to users worldwide. By registering, you confirm that you are at least 18 years of age and comply with all applicable local laws and regulations in your jurisdiction.
               </p>
 
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">2.3 Account Registration</h3>
@@ -77,7 +77,7 @@ export default function Terms() {
                 <li>A unique username</li>
                 <li>A valid email address</li>
                 <li>A secure password</li>
-                <li>Your state of residence (for geo-restriction verification)</li>
+
               </ul>
               <p className="text-gray-700 leading-relaxed mb-4">
                 You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You must immediately notify us of any unauthorized use of your account.
@@ -95,7 +95,7 @@ export default function Terms() {
               
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">3.1 Free-to-Play Entertainment</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                SDSURABHI is a <strong>100% free-to-play</strong> cricket fantasy platform designed purely for entertainment purposes. There are:
+                SDSURABHI is a <strong>100% free-to-play</strong> cricket entertainment platform designed purely for entertainment purposes. There are:
               </p>
               <ul className="list-disc list-inside text-gray-700 mb-4 space-y-2">
                 <li><strong>NO entry fees</strong> - All contests are completely free to join</li>
@@ -106,7 +106,7 @@ export default function Terms() {
 
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">3.2 Skill-Based Game</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                The Platform offers skill-based fantasy cricket contests where success depends on your cricket knowledge, strategic thinking, and decision-making abilities. Outcomes are determined by real-world cricket match performances and your team selection strategy.
+                The Platform offers skill-based cricket contests where success depends on your cricket knowledge, strategic thinking, and decision-making abilities. Outcomes are determined by real-world cricket match performances and your team selection strategy.
               </p>
 
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">3.3 No Legal Tender Involved</h3>

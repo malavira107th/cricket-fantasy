@@ -72,7 +72,7 @@ export default function Dashboard() {
           {/* Welcome Section */}
           <div className="mb-8">
             <h1 className="text-4xl font-bold text-primary mb-2">Welcome back, {user.username}!</h1>
-            <p className="text-gray-600">Ready to test your cricket knowledge? Join a contest and create your dream team!</p>
+            <p className="text-gray-600">Ready to test your cricket knowledge? Join a contest and choose your XI!</p>
           </div>
 
           {/* Stats Grid */}
@@ -158,7 +158,7 @@ export default function Dashboard() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-700 mb-2">No Activity Yet</h3>
-                <p className="text-gray-500 mb-4">Join your first contest to start building your cricket fantasy journey!</p>
+                <p className="text-gray-500 mb-4">Join your first contest to start your cricket journey!</p>
                 <Link href="/contests">
                   <Button className="bg-primary text-white hover:bg-primary/90">
                     Explore Contests

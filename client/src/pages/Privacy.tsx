@@ -74,7 +74,7 @@ export default function Privacy() {
                 <li><strong>Username:</strong> A unique identifier you choose for your account</li>
                 <li><strong>Email Address:</strong> Used for account verification, login, and essential communications</li>
                 <li><strong>Password:</strong> Encrypted and stored securely (we never see your actual password)</li>
-                <li><strong>State of Residence:</strong> Required for geo-restriction compliance</li>
+
               </ul>
               <p className="text-gray-700 leading-relaxed mb-4">
                 <strong>What We DON'T Collect:</strong>
@@ -137,7 +137,7 @@ export default function Privacy() {
 
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">3.2 To Ensure Compliance and Security</h3>
               <ul className="list-disc list-inside text-gray-700 mb-4 space-y-2">
-                <li>Verify eligibility (age and geographic restrictions)</li>
+                <li><strong>Verify eligibility (age verification)</strong></li>
                 <li>Prevent fraud, abuse, and multiple accounts</li>
                 <li>Detect and prevent security threats</li>
                 <li>Enforce our Terms and Conditions</li>

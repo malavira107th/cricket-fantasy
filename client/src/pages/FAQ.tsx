@@ -10,7 +10,7 @@ const FAQ_DATA = [
     questions: [
       {
         q: "What is SDSURABHI?",
-        a: "SDSURABHI is a free-to-play cricket fantasy platform where you can create virtual teams based on real cricket matches and compete with other players. It's purely for entertainment - no money involved, no prizes, just fun and bragging rights!"
+        a: "SDSURABHI is a free cricket simulation game where you can choose your XI based on real cricket matches and compete with other players. It's purely for entertainment - no money involved, no prizes, just fun and bragging rights!"
       },
       {
         q: "Is it really free?",
@@ -18,7 +18,7 @@ const FAQ_DATA = [
       },
       {
         q: "How do I get started?",
-        a: "Simply sign up with your email, choose a username, select your state, and you're ready to play! Browse upcoming matches, create your team, and join contests. It takes less than 2 minutes to get started."
+        a: "Simply sign up with your email and choose a username, and you're ready to play! Browse upcoming matches, choose your XI, and join contests. It takes less than 2 minutes to get started."
       },
       {
         q: "Do I need to download an app?",
@@ -27,23 +27,23 @@ const FAQ_DATA = [
     ]
   },
   {
-    category: "Eligibility & Restrictions",
+    category: "Eligibility",
     questions: [
       {
         q: "Who can play?",
-        a: "Anyone who is 18 years or older and resides in India (except restricted states) can play. You must confirm your age during signup."
+        a: "Anyone who is 18 years or older can play! You must confirm your age during signup. That's it - no other restrictions!"
       },
       {
-        q: "Which states are restricted?",
-        a: "SDSURABHI is NOT available in: Andhra Pradesh, Assam, Nagaland, Odisha, Sikkim, and Telangana. Users from these states cannot register or participate."
+        q: "Is SDSURABHI available worldwide?",
+        a: "Yes! SDSURABHI is available to users worldwide. As long as you're 18+, you can join and start playing from anywhere!"
       },
       {
-        q: "Why are some states restricted?",
-        a: "Even though our platform is free and offers no prizes, we follow responsible gaming practices and comply with state-specific regulations regarding fantasy sports platforms."
+        q: "Are there any geographic restrictions?",
+        a: "No! We're available globally. Just make sure you comply with the laws and regulations in your country."
       },
       {
-        q: "Can I play if I'm traveling to a restricted state?",
-        a: "Our platform checks your registered state. If you registered from an allowed state, you can continue playing. However, we recommend following local regulations."
+        q: "What is the purpose of SDSURABHI?",
+        a: "SDSURABHI is designed purely for entertainment and fun. It's a skill-based cricket simulation game with no monetary stakes, no prizes, and no gambling involved. Play for the love of cricket!"
       }
     ]
   },
@@ -51,7 +51,7 @@ const FAQ_DATA = [
     category: "Creating Teams",
     questions: [
       {
-        q: "How do I create a team?",
+        q: "How do I choose my XI?",
         a: "Select a contest, click 'Create Team', then choose 11 players from both teams playing the match. You must follow team composition rules: 1-4 wicket-keepers, 3-6 batsmen, 1-4 all-rounders, 3-6 bowlers. You can pick minimum 3 and maximum 7 players from any single team."
       },
       {
@@ -119,7 +119,7 @@ const FAQ_DATA = [
     questions: [
       {
         q: "What information do you collect?",
-        a: "We only collect basic information: username, email, password (encrypted), and state (for geo-restriction verification). We don't ask for phone numbers, addresses, or any financial information."
+        a: "We only collect basic information: username, email, and password (encrypted). We don't ask for phone numbers, addresses, or any financial information."
       },
       {
         q: "Is my data safe?",
@@ -157,15 +157,15 @@ const FAQ_DATA = [
     ]
   },
   {
-    category: "Legal & Compliance",
+    category: "Legal & Entertainment",
     questions: [
       {
         q: "Is this gambling?",
-        a: "No! SDSURABHI is NOT gambling. There's no money involved, no entry fees, and no prizes. It's a free skill-based game purely for entertainment."
+        a: "No! SDSURABHI is NOT gambling. There's no money involved, no entry fees, and no prizes. It's a free skill-based entertainment game purely for fun."
       },
       {
-        q: "Is fantasy cricket legal in India?",
-        a: "Yes! Fantasy sports based on skill are legal in India. Since our platform is free with no prizes, it's 100% legal entertainment."
+        q: "Is this legal?",
+        a: "Yes! SDSURABHI is a legitimate entertainment platform. Since there's no money involved and no prizes, it's 100% legal entertainment worldwide."
       },
       {
         q: "Do I need to pay taxes?",
@@ -247,149 +247,73 @@ export default function FAQ() {
           {/* Quick Links */}
           <Card className="bg-white shadow-md mb-12">
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold text-primary mb-4">Quick Navigation</h3>
-              <div className="grid md:grid-cols-4 gap-3">
-                {FAQ_DATA.map((category, index) => (
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {FAQ_DATA.map((category, idx) => (
                   <button
-                    key={index}
+                    key={idx}
                     onClick={() => {
-                      const element = document.getElementById(`category-${index}`);
+                      const element = document.getElementById(`category-${idx}`);
                       element?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="text-sm bg-gray-100 hover:bg-primary hover:text-white transition-colors rounded-lg px-4 py-2 text-left"
+                    className="text-left p-3 rounded-lg hover:bg-primary/10 transition-colors"
                   >
-                    {category.category}
+                    <span className="text-sm font-semibold text-primary hover:underline">
+                      {category.category}
+                    </span>
                   </button>
                 ))}
               </div>
             </CardContent>
           </Card>
 
-          {/* FAQ Categories */}
-          <div className="space-y-12">
-            {FAQ_DATA.map((category, categoryIndex) => (
-              <div key={categoryIndex} id={`category-${categoryIndex}`}>
-                <h2 className="text-3xl font-bold text-primary mb-6 border-b-4 border-secondary pb-2">
-                  {category.category}
-                </h2>
-                <div className="space-y-4">
-                  {category.questions.map((item, questionIndex) => {
-                    const key = `${categoryIndex}-${questionIndex}`;
-                    const isOpen = openIndex === key;
-                    
-                    return (
-                      <Card key={questionIndex} className="bg-white shadow-md hover:shadow-lg transition-shadow">
-                        <CardContent className="p-0">
-                          <button
-                            onClick={() => toggleQuestion(categoryIndex, questionIndex)}
-                            className="w-full text-left p-6 flex items-start justify-between gap-4"
-                          >
-                            <span className="font-semibold text-gray-900 text-lg flex-1">
-                              {item.q}
-                            </span>
-                            <span className="text-2xl text-primary flex-shrink-0">
-                              {isOpen ? '−' : '+'}
-                            </span>
-                          </button>
-                          {isOpen && (
-                            <div className="px-6 pb-6">
-                              <p className="text-gray-700 leading-relaxed">
-                                {item.a}
-                              </p>
-                            </div>
-                          )}
-                        </CardContent>
-                      </Card>
-                    );
-                  })}
-                </div>
+          {/* FAQ Sections */}
+          {FAQ_DATA.map((category, categoryIdx) => (
+            <div key={categoryIdx} id={`category-${categoryIdx}`} className="mb-12">
+              <h2 className="text-3xl font-bold text-primary mb-6">{category.category}</h2>
+              <div className="space-y-4">
+                {category.questions.map((item, questionIdx) => (
+                  <Card
+                    key={questionIdx}
+                    className="bg-white shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+                    onClick={() => toggleQuestion(categoryIdx, questionIdx)}
+                  >
+                    <CardContent className="p-6">
+                      <div className="flex items-start justify-between">
+                        <h3 className="text-lg font-semibold text-gray-900 flex-1">
+                          {item.q}
+                        </h3>
+                        <span className="text-2xl text-primary ml-4">
+                          {openIndex === `${categoryIdx}-${questionIdx}` ? '−' : '+'}
+                        </span>
+                      </div>
+                      {openIndex === `${categoryIdx}-${questionIdx}` && (
+                        <p className="text-gray-700 mt-4 leading-relaxed">
+                          {item.a}
+                        </p>
+                      )}
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
 
-          {/* Still Have Questions */}
-          <div className="mt-16 text-center bg-gradient-to-r from-primary to-primary/80 text-white rounded-xl p-12">
-            <h2 className="text-3xl font-bold mb-4">Still Have Questions?</h2>
-            <p className="text-lg mb-6 text-white/90">
-              Can't find what you're looking for? Our support team is here to help!
-            </p>
-            <Link href="/contact">
-              <Button size="lg" className="bg-secondary text-black hover:bg-secondary/90 text-lg px-10 py-6 h-auto font-bold">
-                Contact Support →
-              </Button>
-            </Link>
-          </div>
+          {/* Contact Section */}
+          <Card className="bg-gradient-to-r from-primary to-primary/80 text-white shadow-lg mt-12">
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-bold mb-3">Still have questions?</h3>
+              <p className="mb-6">
+                Can't find the answer you're looking for? Our support team is here to help!
+              </p>
+              <Link href="/contact">
+                <Button className="bg-secondary text-black hover:bg-secondary/90 font-semibold">
+                  Contact Support →
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-primary text-white py-12 mt-auto">
-        <div className="container">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h4 className="font-bold text-lg mb-4">About</h4>
-              <ul className="space-y-3 text-sm text-white/80">
-                <li><Link href="/about" className="hover:text-secondary transition-colors">About Us</Link></li>
-                <li><Link href="/how-to-play" className="hover:text-secondary transition-colors">How It Works</Link></li>
-                <li><Link href="/contact" className="hover:text-secondary transition-colors">Contact Us</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold text-lg mb-4">Legal</h4>
-              <ul className="space-y-3 text-sm text-white/80">
-                <li><Link href="/terms" className="hover:text-secondary transition-colors">Terms & Conditions</Link></li>
-                <li><Link href="/privacy" className="hover:text-secondary transition-colors">Privacy Policy</Link></li>
-                <li><Link href="/responsible-gaming" className="hover:text-secondary transition-colors">Responsible Gaming</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold text-lg mb-4">Support</h4>
-              <ul className="space-y-3 text-sm text-white/80">
-                <li><Link href="/faq" className="hover:text-secondary transition-colors">FAQ</Link></li>
-                <li><Link href="/contact" className="hover:text-secondary transition-colors">Contact Support</Link></li>
-                <li><Link href="/signup" className="hover:text-secondary transition-colors">Sign Up</Link></li>
-                <li><Link href="/login" className="hover:text-secondary transition-colors">Login</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold text-lg mb-4">Company</h4>
-              <div className="text-sm text-white/80 space-y-2">
-                <img src="/logo.png" alt="SDSURABHI" className="h-16 w-auto mb-3" />
-                <p className="font-semibold text-white">SDSURABHI INFRA PRIVATE LIMITED</p>
-                <p className="text-white/60 text-xs">Brand Name: SDSURABHI</p>
-                <p className="text-secondary">Test Your Cricket IQ</p>
-                <p className="mt-3">Ram Acchayvar 48/2, Ayodhya Puri 2 Bijnour, Sarojini Nagar, Lucknow, Uttar Pradesh 226008, India</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-white/20 pt-6 pb-4">
-            <p className="text-sm text-white/70 leading-relaxed">
-          {/* Authorized Advertising Partner */}
-          <div className="border-t border-white/20 pt-6 pb-4">
-            <p className="text-sm text-white/70">
-              <span className="font-semibold text-white">Operated by:</span> SDSURABHI INFRA PRIVATE LIMITED
-            </p>
-            <p className="text-xs text-white/60 mt-1">
-              CIN: U41002UP2023PTC194590 | GST: 09ABMCS3759A1Z4
-            </p>
-          </div>
-
-
-              <span className="font-semibold text-white">Legal Disclaimer:</span> This platform is NOT available in Andhra Pradesh, Assam, Odisha, Telangana, Nagaland, and Sikkim. Only users 18 years and older are permitted. This is a skill-based, free-to-play platform with no real money involved.
-            </p>
-          </div>
-
-          <div className="border-t border-white/20 pt-4">
-            <p className="text-sm text-white/70 text-center">
-              © 2025 SDSURABHI INFRA PRIVATE LIMITED. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

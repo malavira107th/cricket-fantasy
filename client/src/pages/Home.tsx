@@ -25,7 +25,7 @@ function getDemoMatches() {
         { name: 'Australia', shortname: 'AUS', img: '' }
       ],
       series_id: 'demo-series-1',
-      fantasyEnabled: true,
+      enabled: true,
       matchStarted: false,
       matchEnded: false
     },
@@ -43,7 +43,7 @@ function getDemoMatches() {
         { name: 'Pakistan', shortname: 'PAK', img: '' }
       ],
       series_id: 'demo-series-2',
-      fantasyEnabled: true,
+      enabled: true,
       matchStarted: false,
       matchEnded: false
     },
@@ -61,7 +61,7 @@ function getDemoMatches() {
         { name: 'Delhi Capitals', shortname: 'DC', img: '' }
       ],
       series_id: 'demo-series-3',
-      fantasyEnabled: true,
+      enabled: true,
       matchStarted: false,
       matchEnded: false
     },
@@ -79,7 +79,7 @@ function getDemoMatches() {
         { name: 'New Zealand', shortname: 'NZ', img: '' }
       ],
       series_id: 'demo-series-4',
-      fantasyEnabled: true,
+      enabled: true,
       matchStarted: false,
       matchEnded: false
     }
@@ -206,10 +206,10 @@ export default function Home() {
       >
         <div className="container relative z-10 py-16 text-center">
           <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 text-stroke">
-            Play Cricket Fantasy for <span className="text-secondary">FREE</span>
+            Choose Your XI for <span className="text-secondary">FREE</span>
           </h1>
           <p className="text-lg md:text-xl text-white mb-8 max-w-3xl mx-auto leading-relaxed">
-            Experience skill-based cricket entertainment without any monetary risk. Create your dream team, compete with friends, and enjoy the thrill of the game purely for fun!
+            Experience skill-based cricket entertainment without any monetary risk. Choose your XI, compete with friends, and enjoy the thrill of the game purely for fun!
           </p>
           {!isLoggedIn ? (
             <Link href="/signup">

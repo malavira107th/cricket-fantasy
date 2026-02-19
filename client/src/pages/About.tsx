@@ -66,10 +66,10 @@ export default function About() {
             <h2 className="text-4xl font-bold text-primary mb-6">Our Story</h2>
             <div className="max-w-none">
               <p className="text-gray-700 leading-relaxed mb-4">
-                SDSURABHI was born from a simple idea: cricket fantasy should be about passion, knowledge, and fun—not money. We're a team of cricket enthusiasts who believe that the thrill of building your dream team and competing with fellow fans shouldn't require opening your wallet.
+                SDSURABHI was born from a simple idea: cricket should be about passion, knowledge, and fun—not money. We're a team of cricket enthusiasts who believe that the thrill of choosing your XI and competing with fellow fans shouldn't require opening your wallet.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Founded in January 2025, we set out to create India's first completely free cricket fantasy platform. No entry fees, no prizes, no pressure—just pure, skill-based cricket entertainment. We wanted to build a space where cricket fans could test their knowledge, engage with the sport they love, and compete for bragging rights alone.
+                Founded in January 2025, we set out to create the world's first completely free cricket entertainment platform. No entry fees, no prizes, no pressure—just pure, skill-based cricket fun. We wanted to build a space where cricket fans could test their knowledge, engage with the sport they love, and compete for bragging rights alone.
               </p>
               <p className="text-gray-700 leading-relaxed">
                 Today, thousands of cricket fans across India use SDSURABHI to enhance their cricket-watching experience. Whether it's a thrilling T20I, a strategic ODI, or a gripping Test match, our platform brings fans closer to the game they love.
@@ -85,7 +85,7 @@ export default function About() {
                   <div className="text-5xl mb-4">🎯</div>
                   <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
                   <p className="text-white/90 leading-relaxed">
-                    To provide cricket fans with a completely free, skill-based fantasy platform that enhances their cricket-watching experience without any financial risk or pressure. We aim to make cricket fantasy accessible to everyone who loves the sport.
+                    To provide cricket fans with a completely free, skill-based entertainment platform that enhances their cricket-watching experience without any financial risk or pressure. We aim to make cricket entertainment accessible to everyone who loves the sport.
                   </p>
                 </CardContent>
               </Card>
@@ -95,7 +95,7 @@ export default function About() {
                   <div className="text-5xl mb-4">👁️</div>
                   <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
                   <p className="leading-relaxed">
-                    To become India's most trusted and loved free cricket fantasy platform, where millions of fans connect, compete, and celebrate their cricket knowledge together. We envision a community built on passion, not profit.
+                    To become the world's most trusted and loved free cricket entertainment platform, where millions of fans connect, compete, and celebrate their cricket knowledge together. We envision a community built on passion, not profit.
                   </p>
                 </CardContent>
               </Card>

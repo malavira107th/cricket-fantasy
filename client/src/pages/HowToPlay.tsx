@@ -51,9 +51,9 @@ export default function HowToPlay() {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary to-primary/80 text-white py-16">
         <div className="container text-center">
-          <h1 className="text-5xl font-bold mb-4">How to Play Cricket Fantasy</h1>
+          <h1 className="text-5xl font-bold mb-4">How to Choose Your XI</h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Learn how to create your dream team, join contests, and compete with fellow cricket enthusiasts!
+            Learn how to choose your XI, join contests, and compete with fellow cricket enthusiasts!
           </p>
         </div>
       </section>
@@ -73,7 +73,7 @@ export default function HowToPlay() {
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold text-primary mb-3">Create Your Account</h3>
                     <p className="text-gray-700 leading-relaxed mb-4">
-                      Sign up for free by providing your username, email, and selecting your state. Make sure you're 18+ and not from restricted states (Andhra Pradesh, Assam, Nagaland, Odisha, Sikkim, Telangana).
+                      Sign up for free by providing your username and email. Make sure you're 18+ to play!
                     </p>
                     <Link href="/signup">
                       <Button className="bg-primary text-white hover:bg-primary/90">
