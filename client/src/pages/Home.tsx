@@ -7,83 +7,7 @@ import { useState, useEffect } from "react";
 import { getCurrentMatches } from "@/lib/cricketApi";
 
 
-// Demo matches fallback data
-function getDemoMatches() {
-  return [
-    {
-      id: 'demo-1',
-      name: 'Match 1 - T20 Format',
-      matchType: 'T20',
-      status: 'Starts in 2h 30m',
-      venue: 'Cricket Ground A',
-      date: new Date(Date.now() + 2.5 * 60 * 60 * 1000).toISOString(),
-      dateTimeGMT: new Date(Date.now() + 2.5 * 60 * 60 * 1000).toISOString(),
-      teams: ['Team A', 'Team B'],
-      teamInfo: [
-        { name: 'Team A', shortname: 'TA', img: '' },
-        { name: 'Team B', shortname: 'TB', img: '' }
-      ],
-      series_id: 'demo-series-1',
-      enabled: true,
-      matchStarted: false,
-      matchEnded: false
-    },
-    {
-      id: 'demo-2',
-      name: 'Match 2 - ODI Format',
-      matchType: 'ODI',
-      status: 'Starts in 5h 15m',
-      venue: 'Cricket Ground B',
-      date: new Date(Date.now() + 5.25 * 60 * 60 * 1000).toISOString(),
-      dateTimeGMT: new Date(Date.now() + 5.25 * 60 * 60 * 1000).toISOString(),
-      teams: ['Team C', 'Team D'],
-      teamInfo: [
-        { name: 'Team C', shortname: 'TC', img: '' },
-        { name: 'Team D', shortname: 'TD', img: '' }
-      ],
-      series_id: 'demo-series-2',
-      enabled: true,
-      matchStarted: false,
-      matchEnded: false
-    },
-    {
-      id: 'demo-3',
-      name: 'Match 3 - T20 League',
-      matchType: 'T20',
-      status: 'Starts in 8h 45m',
-      venue: 'Cricket Ground C',
-      date: new Date(Date.now() + 8.75 * 60 * 60 * 1000).toISOString(),
-      dateTimeGMT: new Date(Date.now() + 8.75 * 60 * 60 * 1000).toISOString(),
-      teams: ['Team E', 'Team F'],
-      teamInfo: [
-        { name: 'Team E', shortname: 'TE', img: '' },
-        { name: 'Team F', shortname: 'TF', img: '' }
-      ],
-      series_id: 'demo-series-3',
-      enabled: true,
-      matchStarted: false,
-      matchEnded: false
-    },
-    {
-      id: 'demo-4',
-      name: 'Match 4 - Test Format',
-      matchType: 'Test',
-      status: 'Starts in 12h',
-      venue: 'Cricket Ground D',
-      date: new Date(Date.now() + 12 * 60 * 60 * 1000).toISOString(),
-      dateTimeGMT: new Date(Date.now() + 12 * 60 * 60 * 1000).toISOString(),
-      teams: ['Team G', 'Team H'],
-      teamInfo: [
-        { name: 'Team G', shortname: 'TG', img: '' },
-        { name: 'Team H', shortname: 'TH', img: '' }
-      ],
-      series_id: 'demo-series-4',
-      enabled: true,
-      matchStarted: false,
-      matchEnded: false
-    }
-  ];
-}
+// No demo data - fetch real matches from API only
 
 export default function Home() {
   // The userAuth hooks provides authentication state
@@ -110,13 +34,13 @@ export default function Home() {
         if (matches && matches.length > 0) {
           setFeaturedMatches(matches.slice(0, 4));
         } else {
-          // Fallback to demo data if API returns no matches
-          setFeaturedMatches(getDemoMatches());
+          // No matches available - show empty state
+          setFeaturedMatches([]);
         }
       } catch (error) {
         console.error('Error fetching matches:', error);
-        // Use demo data on error
-        setFeaturedMatches(getDemoMatches());
+        // Show empty state on error
+        setFeaturedMatches([]);
       } finally {
         setLoading(false);
       }
@@ -378,29 +302,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quick Stats */}
-      <section className="py-16 bg-gradient-to-br from-primary to-blue-700 text-white">
-        <div className="container">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2">5,234</div>
-              <div className="text-lg text-white/90">Active Players</div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2">12</div>
-              <div className="text-lg text-white/90">Live Contests</div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2">1,456</div>
-              <div className="text-lg text-white/90">Completed Contests</div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2 text-secondary">100%</div>
-              <div className="text-lg text-white/90">FREE</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Quick Stats - Removed fake statistics */}
 
       {/* How It Works */}
       <section className="py-16 bg-white">

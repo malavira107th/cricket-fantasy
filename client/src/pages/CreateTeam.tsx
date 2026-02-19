@@ -5,43 +5,8 @@ import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
-// Generic player data for cricket team selection
-// Note: All player names are generic placeholders for demonstration purposes
-const SAMPLE_PLAYERS = [
-  // Wicketkeepers
-  { id: 1, name: "Wicketkeeper A", role: "WK", team: "Team A", credits: 10, points: 245 },
-  { id: 2, name: "Wicketkeeper B", role: "WK", team: "Team B", credits: 8.5, points: 198 },
-  { id: 3, name: "Wicketkeeper C", role: "WK", team: "Team C", credits: 9.5, points: 220 },
-  { id: 4, name: "Wicketkeeper D", role: "WK", team: "Team D", credits: 9, points: 210 },
-  
-  // Batsmen
-  { id: 5, name: "Batsman A", role: "BAT", team: "Team A", credits: 11, points: 312 },
-  { id: 6, name: "Batsman B", role: "BAT", team: "Team B", credits: 10.5, points: 298 },
-  { id: 7, name: "Batsman C", role: "BAT", team: "Team C", credits: 10, points: 275 },
-  { id: 8, name: "Batsman D", role: "BAT", team: "Team B", credits: 9.5, points: 256 },
-  { id: 9, name: "Batsman E", role: "BAT", team: "Team E", credits: 9.5, points: 248 },
-  { id: 10, name: "Batsman F", role: "BAT", team: "Team B", credits: 8.5, points: 210 },
-  { id: 11, name: "Batsman G", role: "BAT", team: "Team F", credits: 9, points: 235 },
-  { id: 12, name: "Batsman H", role: "BAT", team: "Team E", credits: 8, points: 195 },
-  
-  // All-rounders
-  { id: 13, name: "All-rounder A", role: "AR", team: "Team G", credits: 10.5, points: 285 },
-  { id: 14, name: "All-rounder B", role: "AR", team: "Team H", credits: 10, points: 270 },
-  { id: 15, name: "All-rounder C", role: "AR", team: "Team I", credits: 9, points: 240 },
-  { id: 16, name: "All-rounder D", role: "AR", team: "Team J", credits: 8.5, points: 225 },
-  { id: 17, name: "All-rounder E", role: "AR", team: "Team G", credits: 8, points: 205 },
-  { id: 18, name: "All-rounder F", role: "AR", team: "Team J", credits: 7.5, points: 180 },
-  
-  // Bowlers
-  { id: 19, name: "Bowler A", role: "BOW", team: "Team I", credits: 11, points: 295 },
-  { id: 20, name: "Bowler B", role: "BOW", team: "Team K", credits: 10, points: 275 },
-  { id: 21, name: "Bowler C", role: "BOW", team: "Team L", credits: 9.5, points: 260 },
-  { id: 22, name: "Bowler D", role: "BOW", team: "Team M", credits: 9, points: 245 },
-  { id: 23, name: "Bowler E", role: "BOW", team: "Team N", credits: 9, points: 240 },
-  { id: 24, name: "Bowler F", role: "BOW", team: "Team B", credits: 8.5, points: 220 },
-  { id: 25, name: "Bowler G", role: "BOW", team: "Team C", credits: 8, points: 205 },
-  { id: 26, name: "Bowler H", role: "BOW", team: "Team O", credits: 7.5, points: 185 },
-];
+// Players will be fetched from API - no mock data
+const SAMPLE_PLAYERS: any[] = [];
 
 interface Player {
   id: number;

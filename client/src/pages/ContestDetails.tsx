@@ -6,23 +6,8 @@ import Footer from "@/components/Footer";
 import LiveScore from "@/components/LiveScore";
 import { useEffect, useState } from "react";
 
-// Sample contest data - in real app, this would come from API
-const CONTEST_DATA: any = {
-  "1": {
-    id: 1,
-    team1: { name: "India", code: "IND", flag: "🇮🇳", color: "bg-orange-500" },
-    team2: { name: "Australia", code: "AUS", flag: "🇦🇺", color: "bg-yellow-500" },
-    matchType: "2nd T20I",
-    venue: "Eden Gardens, Kolkata",
-    date: "November 26, 2025",
-    startTime: "7:00 PM IST",
-    startsIn: "2h 30m",
-    participants: 1247,
-    maxParticipants: 10000,
-    status: "Open"
-  },
-  // Add more contests as needed
-};
+// Contest data fetched from API - no mock data
+const CONTEST_DATA: any = {};
 
 export default function ContestDetails() {
   const params = useParams();

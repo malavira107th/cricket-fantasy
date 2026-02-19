@@ -5,62 +5,8 @@ import { Link } from "wouter";
 import { useState, useEffect } from "react";
 import { getCurrentMatches, getAllMatches, getTeamColor, getTeamCodes, getMatchStatus, type Match } from "@/lib/cricketApi";
 
-const SAMPLE_CONTESTS_BACKUP = [
-  {
-    id: 1,
-    team1: { name: "IND", flag: "🇮🇳", color: "bg-orange-500" },
-    team2: { name: "AUS", flag: "🇦🇺", color: "bg-yellow-500" },
-    matchType: "2nd T20I",
-    venue: "Eden Gardens",
-    startTime: "2h 30m",
-    participants: 1247
-  },
-  {
-    id: 2,
-    team1: { name: "ENG", flag: "🏴󐁧󐁢󐁥󐁮󐁧󐁿", color: "bg-red-600" },
-    team2: { name: "PAK", flag: "🇵🇰", color: "bg-green-700" },
-    matchType: "3rd T20I",
-    venue: "Lord's",
-    startTime: "4h 15m",
-    participants: 892
-  },
-  {
-    id: 3,
-    team1: { name: "SA", flag: "🇿🇦", color: "bg-green-600" },
-    team2: { name: "NZ", flag: "🇳🇿", color: "bg-black" },
-    matchType: "1st ODI",
-    venue: "Cape Town",
-    startTime: "6h 45m",
-    participants: 654
-  },
-  {
-    id: 4,
-    team1: { name: "WI", flag: "🏴", color: "bg-blue-700" },
-    team2: { name: "SL", flag: "🇱🇰", color: "bg-yellow-600" },
-    matchType: "2nd T20I",
-    venue: "Bridgetown",
-    startTime: "8h 20m",
-    participants: 423
-  },
-  {
-    id: 5,
-    team1: { name: "BAN", flag: "🇧🇩", color: "bg-green-600" },
-    team2: { name: "AFG", flag: "🇦🇫", color: "bg-blue-800" },
-    matchType: "1st T20I",
-    venue: "Dhaka",
-    startTime: "Tomorrow",
-    participants: 312
-  },
-  {
-    id: 6,
-    team1: { name: "IND", flag: "🇮🇳", color: "bg-orange-500" },
-    team2: { name: "ENG", flag: "🏴󐁧󐁢󐁥󐁮󐁧󐁿", color: "bg-red-600" },
-    matchType: "1st Test",
-    venue: "Mumbai",
-    startTime: "Tomorrow",
-    participants: 1856
-  }
-];
+// Mock data removed - contests fetched from API only
+const SAMPLE_CONTESTS_BACKUP: any[] = [];
 
 export default function Contests() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
