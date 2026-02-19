@@ -3,16 +3,5 @@
   "devCommand": "pnpm dev",
   "installCommand": "pnpm install --no-frozen-lockfile",
   "framework": null,
-  "outputDirectory": "dist/public",
-  "public": "dist/public",
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/index.ts"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
+  "outputDirectory": "dist"
 }
